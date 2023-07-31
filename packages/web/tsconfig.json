@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/**/*.tsx"
+  ],
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pageComponents/*": ["components/pageComponents/*"],
+      "@layouts/*": ["components/layouts/*"],
+      "@contexts/*": ["contexts/*"],
+      "@gen/*": ["gen/*"],
+      "@hooks/*": ["hooks/*"],
+      "@lib/*": ["lib/*"],
+    }
+  },
+  "exclude": [],
+}

@@ -1,0 +1,19 @@
+.branch {
+  list-style: none;
+  margin: 10px 0px;
+}
+
+.branch-name {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.commit-info {
+  color: #666;
+  font-size: 16px;
+
+  > span {
+    display: block;
+  }
+}
