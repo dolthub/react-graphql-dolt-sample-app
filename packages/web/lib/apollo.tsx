@@ -54,7 +54,6 @@ export const initApolloClient = (
   // isn't shared between connections (which would be bad)
   if (typeof window === "undefined") {
     return createApolloClient(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       process.env.INTERNAL_GRAPHQLAPI_URL!,
       initialState,
       req
@@ -87,7 +86,6 @@ type ApolloContext = {
 export function withApollo<
   P extends Record<string, unknown> = Record<string, unknown>
 >() {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   return (PageComponent: NextPage<P>) => {
     const WithApollo = ({
       apolloClient,
