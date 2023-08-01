@@ -1,18 +1,19 @@
-# Dolt + GraphQL + React Sample Application
+# React + GraphQL + Dolt (RDG) Sample Application
 
-This sample application shows how you can set up a GraphQL server using a Dolt database and connect it to a React front end.
+This sample application uses the RDG web stack. It shows how you can set up a GraphQL
+server using a Dolt database and connect it to a React front end.
 
 ## Getting started
 
-1. Start by installing dependencies and compiling the code:
+### 1. Start by installing dependencies and compiling the code:
 
 ```shell
-% yarn && yarn compile
+~ % yarn && yarn compile
 ```
 
-2. Add database configuration
+### 2. Add database configuration
 
-In order to start your GraphQL server, you need to provide your database configuration. It should look like this:
+In order to start your GraphQL server, you need to provide your database configuration. Add a `.development.env` file that looks like this:
 
 ```shell
 HOST="dolthub-us-jails.dbs.hosted.doltdb.com"
@@ -24,7 +25,7 @@ DATABASE="us_jails"
 
 _Note: we are using a cloud-hosted Dolt database from [Hosted Dolt](https://hosted.doltdb.com/)_
 
-3. Start GraphQL server
+### 3. Start GraphQL server
 
 You'll know if your database is configured correctly if you start your local GraphQL server and get no errors.
 
@@ -54,9 +55,9 @@ graphql-server % yarn dev
 [Nest] 5310  - 07/31/2023, 3:00:24 PM     LOG [NestApplication] Nest application successfully started +5ms
 ```
 
-You test your queries in the GraphQL playground from http://localhost:9000/graphql.
+You can test your queries in the GraphQL playground from http://localhost:9000/graphql.
 
-4. Start web server
+### 4. Start web server
 
 In another terminal, start the local web server. Go to `packages/web` and run:
 
@@ -73,12 +74,25 @@ And then navigate to http://localhost:3000 in your browser.
 
 ### Dolt
 
-Dolt is a MySQL-compatible version-controlled database, which includes things like branches, commits, diffs, and merges. Dolt can be used with any MySQL client, including [Node MySQL](https://www.npmjs.com/package/mysql), which is used in this application.
+[Dolt](https://doltdb.com) is a MySQL-compatible version-controlled database, which
+includes things like branches, commits, diffs, and merges. Dolt can be used with any MySQL
+client, including [Node MySQL](https://www.npmjs.com/package/mysql), which is used in this
+application.
 
-Dolt has a cloud-hosted option called [Hosted Dolt](https://hosted.doltdb.com), which is great for creating production applications.
+Dolt has a cloud-hosted option called [Hosted Dolt](https://hosted.doltdb.com), which is
+great for creating production applications.
 
 ### GraphQL
 
-The [GraphQL](https://graphql.org/) server layer sits between Dolt and the React web application. We use the [Nest.js](https://docs.nestjs.com) framework to integrate with a Dolt database via [TypeORM](https://github.com/typeorm/typeorm), as well as expose GraphQL endpoints via the [GraphQL integration](https://docs.nestjs.com/graphql/quick-start).
+The [GraphQL](https://graphql.org/) server layer sits between Dolt and the React web
+application. We use the [Nest.js](https://docs.nestjs.com) framework to integrate with a
+Dolt database via [TypeORM](https://github.com/typeorm/typeorm), as well as expose GraphQL
+endpoints via the [GraphQL integration](https://docs.nestjs.com/graphql/quick-start).
 
 ### React
+
+This application uses [Next.js](https://nextjs.org/) (a React framework that abstracts and
+automatically configures tooling needed for React, like bundling, compiling), [Apollo
+Client](https://www.apollographql.com/docs/react/) (manages local and remote data with
+GraphQL), and [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) (generates
+Typescript types and React query and mutation hooks based on our GraphQL schema).
