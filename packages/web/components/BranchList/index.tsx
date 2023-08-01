@@ -1,6 +1,6 @@
+import Link from "next/link";
 import ReactLoader from "react-loader";
 import { useListBranchesQuery } from "../../gen/graphql-types";
-import Branch from "./Branch";
 
 export default function BranchList() {
   const res = useListBranchesQuery();
@@ -8,7 +8,11 @@ export default function BranchList() {
     return <ReactLoader loaded={false} />;
   }
   if (res.error) {
-    return <div>Error loading branches: {res.error.message}</div>;
+    return (
+      <div className="error-msg">
+        Error loading branches: {res.error.message}
+      </div>
+    );
   }
   if (!res.data?.branches.length) {
     return <div>No branches found</div>;
@@ -16,7 +20,14 @@ export default function BranchList() {
   return (
     <ul>
       {res.data.branches.map((b) => (
-        <Branch key={b.name} branch={b} />
+        <li key={b.name}>
+          <Link
+            href="/branches/[name]"
+            as={`/branches/${encodeURIComponent(b.name)}`}
+          >
+            {b.name}
+          </Link>
+        </li>
       ))}
     </ul>
   );

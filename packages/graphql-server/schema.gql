@@ -18,4 +18,9 @@ scalar Timestamp
 
 type Query {
   branches: [Branch!]!
+  branch(name: String!): Branch
+}
+
+type Mutation {
+  deleteBranch(name: String!): Boolean!
 }

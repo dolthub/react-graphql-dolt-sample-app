@@ -28,17 +28,47 @@ export type Branch = {
   name: Scalars['ID']['output'];
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  deleteBranch: Scalars['Boolean']['output'];
+};
+
+
+export type MutationDeleteBranchArgs = {
+  name: Scalars['String']['input'];
+};
+
 export type Query = {
   __typename?: 'Query';
+  branch?: Maybe<Branch>;
   branches: Array<Branch>;
+};
+
+
+export type QueryBranchArgs = {
+  name: Scalars['String']['input'];
 };
 
 export type BranchFragment = { __typename?: 'Branch', name: string, hash: string, latestCommitter: string, latestCommitMessage: string, latestCommitDate: any };
 
+export type GetBranchQueryVariables = Exact<{
+  name: Scalars['String']['input'];
+}>;
+
+
+export type GetBranchQuery = { __typename?: 'Query', branch?: { __typename?: 'Branch', name: string, hash: string, latestCommitter: string, latestCommitMessage: string, latestCommitDate: any } | null };
+
+export type DeleteBranchMutationVariables = Exact<{
+  name: Scalars['String']['input'];
+}>;
+
+
+export type DeleteBranchMutation = { __typename?: 'Mutation', deleteBranch: boolean };
+
 export type ListBranchesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ListBranchesQuery = { __typename?: 'Query', branches: Array<{ __typename?: 'Branch', name: string, hash: string, latestCommitter: string, latestCommitMessage: string, latestCommitDate: any }> };
+export type ListBranchesQuery = { __typename?: 'Query', branches: Array<{ __typename?: 'Branch', name: string }> };
 
 export const BranchFragmentDoc = gql`
     fragment Branch on Branch {
@@ -49,13 +79,79 @@ export const BranchFragmentDoc = gql`
   latestCommitDate
 }
     `;
-export const ListBranchesDocument = gql`
-    query ListBranches {
-  branches {
+export const GetBranchDocument = gql`
+    query GetBranch($name: String!) {
+  branch(name: $name) {
     ...Branch
   }
 }
     ${BranchFragmentDoc}`;
+
+/**
+ * __useGetBranchQuery__
+ *
+ * To run a query within a React component, call `useGetBranchQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetBranchQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetBranchQuery({
+ *   variables: {
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useGetBranchQuery(baseOptions: Apollo.QueryHookOptions<GetBranchQuery, GetBranchQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetBranchQuery, GetBranchQueryVariables>(GetBranchDocument, options);
+      }
+export function useGetBranchLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetBranchQuery, GetBranchQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetBranchQuery, GetBranchQueryVariables>(GetBranchDocument, options);
+        }
+export type GetBranchQueryHookResult = ReturnType<typeof useGetBranchQuery>;
+export type GetBranchLazyQueryHookResult = ReturnType<typeof useGetBranchLazyQuery>;
+export type GetBranchQueryResult = Apollo.QueryResult<GetBranchQuery, GetBranchQueryVariables>;
+export const DeleteBranchDocument = gql`
+    mutation DeleteBranch($name: String!) {
+  deleteBranch(name: $name)
+}
+    `;
+export type DeleteBranchMutationFn = Apollo.MutationFunction<DeleteBranchMutation, DeleteBranchMutationVariables>;
+
+/**
+ * __useDeleteBranchMutation__
+ *
+ * To run a mutation, you first call `useDeleteBranchMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteBranchMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteBranchMutation, { data, loading, error }] = useDeleteBranchMutation({
+ *   variables: {
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useDeleteBranchMutation(baseOptions?: Apollo.MutationHookOptions<DeleteBranchMutation, DeleteBranchMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<DeleteBranchMutation, DeleteBranchMutationVariables>(DeleteBranchDocument, options);
+      }
+export type DeleteBranchMutationHookResult = ReturnType<typeof useDeleteBranchMutation>;
+export type DeleteBranchMutationResult = Apollo.MutationResult<DeleteBranchMutation>;
+export type DeleteBranchMutationOptions = Apollo.BaseMutationOptions<DeleteBranchMutation, DeleteBranchMutationVariables>;
+export const ListBranchesDocument = gql`
+    query ListBranches {
+  branches {
+    name
+  }
+}
+    `;
 
 /**
  * __useListBranchesQuery__

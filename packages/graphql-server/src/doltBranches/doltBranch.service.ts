@@ -3,6 +3,11 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { DoltBranches } from "./doltBranch.entity";
 
+export class CreateBranchArgs {
+  newBranchName: string;
+  refName: string;
+}
+
 @Injectable()
 export class DoltBranchesService {
   constructor(
@@ -12,5 +17,25 @@ export class DoltBranchesService {
 
   findAll(): Promise<DoltBranches[]> {
     return this.doltBranchesRepository.find();
+  }
+
+  findOne(name: string): Promise<DoltBranches | null> {
+    return this.doltBranchesRepository.findOneBy({ name });
+  }
+
+  // The `dolt_branch` system table does not support manual inserts or deletes. We must use
+  // the stored procedure instead.
+  async create(args: CreateBranchArgs): Promise<boolean> {
+    await this.doltBranchesRepository.query(
+      `CALL DOLT_BRANCH('-c', '${args.refName}', '${args.newBranchName}')`
+    );
+    return true;
+  }
+
+  async remove(name: string): Promise<boolean> {
+    await this.doltBranchesRepository.query(
+      `CALL DOLT_BRANCH('-d', '${name}')`
+    );
+    return true;
   }
 }

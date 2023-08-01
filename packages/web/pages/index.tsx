@@ -1,16 +1,12 @@
 import { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
+import Page from "../layouts/page";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Home</title>
-      </Head>
-      <h1>Home</h1>
+    <Page title="Home">
       <Link href="/branches">View branches</Link>
-    </div>
+    </Page>
   );
 };
 

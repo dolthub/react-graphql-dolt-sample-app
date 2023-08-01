@@ -1,18 +1,14 @@
 import { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
-import BranchList from "../components/BranchList";
+import BranchList from "../../components/BranchList";
+import Page from "../../layouts/page";
 
 const Branches: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Branches</title>
-      </Head>
-      <h1>Branches</h1>
+    <Page title="Branches">
       <BranchList />
       <Link href="/">Back to home</Link>
-    </div>
+    </Page>
   );
 };
 
