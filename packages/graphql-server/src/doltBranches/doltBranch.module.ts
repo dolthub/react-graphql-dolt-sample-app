@@ -6,7 +6,6 @@ import { DoltBranchesService } from "./doltBranch.service";
 @Module({
   imports: [TypeOrmModule.forFeature([DoltBranches])],
   providers: [DoltBranchesService],
-  // controllers: [DoltBranchesController],
   exports: [DoltBranchesService],
 })
 export class DoltBranchesModule {}

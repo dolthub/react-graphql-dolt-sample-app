@@ -25,13 +25,6 @@ export class DoltBranchesService {
 
   // The `dolt_branch` system table does not support manual inserts or deletes. We must use
   // the stored procedure instead.
-  async create(args: CreateBranchArgs): Promise<boolean> {
-    await this.doltBranchesRepository.query(
-      `CALL DOLT_BRANCH('-c', '${args.refName}', '${args.newBranchName}')`
-    );
-    return true;
-  }
-
   async remove(name: string): Promise<boolean> {
     await this.doltBranchesRepository.query(
       `CALL DOLT_BRANCH('-d', '${name}')`
