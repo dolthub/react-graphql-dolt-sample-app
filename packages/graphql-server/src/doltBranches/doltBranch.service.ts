@@ -26,7 +26,7 @@ export class DoltBranchesService {
     ]);
   }
 
-  async create(newBranchName: string, fromRefName: string): Promise<void> {
+  async create(fromRefName: string, newBranchName: string): Promise<void> {
     await this.doltBranchesRepository.query(`CALL DOLT_BRANCH('-c', ?, ?)`, [
       fromRefName,
       newBranchName,

@@ -49,7 +49,7 @@ export class BranchResolver {
 
   @Mutation((_returns) => Boolean)
   async createBranch(@Args() args: CreateBranchArgs): Promise<boolean> {
-    await this.doltBranchService.create(args.newBranchName, args.fromRefName);
+    await this.doltBranchService.create( args.fromRefName, args.newBranchName);
     return true;
   }
 }
