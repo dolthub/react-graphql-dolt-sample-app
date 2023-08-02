@@ -1,6 +1,6 @@
+import Page from "@layouts/page";
 import { NextPage } from "next";
 import Link from "next/link";
-import Page from "../layouts/page";
 
 const Home: NextPage = () => {
   return (

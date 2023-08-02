@@ -12,11 +12,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
-      "@pageComponents/*": ["components/pageComponents/*"],
-      "@layouts/*": ["components/layouts/*"],
-      "@contexts/*": ["contexts/*"],
       "@gen/*": ["gen/*"],
-      "@hooks/*": ["hooks/*"],
+      "@layouts/*": ["layouts/*"],
       "@lib/*": ["lib/*"],
     }
   },

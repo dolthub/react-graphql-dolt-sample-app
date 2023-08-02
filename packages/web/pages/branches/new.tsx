@@ -1,7 +1,7 @@
+import NewBranchForm from "@components/NewBranchForm";
+import Page from "@layouts/page";
 import { NextPage } from "next";
 import Link from "next/link";
-import NewBranchForm from "../../components/NewBranchForm";
-import Page from "../../layouts/page";
 
 const NewBranchPage: NextPage = () => {
   return (

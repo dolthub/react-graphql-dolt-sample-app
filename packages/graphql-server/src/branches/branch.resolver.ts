@@ -43,11 +43,13 @@ export class BranchResolver {
 
   @Mutation((_returns) => Boolean)
   async deleteBranch(@Args() args: GetBranchArgs): Promise<boolean> {
-    return this.doltBranchService.remove(args.name);
+    await this.doltBranchService.remove(args.name);
+    return true;
   }
 
   @Mutation((_returns) => Boolean)
   async createBranch(@Args() args: CreateBranchArgs): Promise<boolean> {
-    return this.doltBranchService.create(args.newBranchName, args.fromRefName);
+    await this.doltBranchService.create(args.newBranchName, args.fromRefName);
+    return true;
   }
 }

@@ -1,7 +1,7 @@
+import BranchList from "@components/BranchList";
+import Page from "@layouts/page";
 import { NextPage } from "next";
 import Link from "next/link";
-import BranchList from "../../components/BranchList";
-import Page from "../../layouts/page";
 
 const Branches: NextPage = () => {
   return (

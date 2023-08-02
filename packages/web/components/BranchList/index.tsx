@@ -1,6 +1,6 @@
+import { useListBranchesQuery } from "@gen/graphql-types";
 import Link from "next/link";
 import ReactLoader from "react-loader";
-import { useListBranchesQuery } from "../../gen/graphql-types";
 
 export default function BranchList() {
   const res = useListBranchesQuery();

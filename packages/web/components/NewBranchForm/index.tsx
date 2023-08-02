@@ -1,10 +1,10 @@
-import { useRouter } from "next/router";
-import { SyntheticEvent, useState } from "react";
-import ReactLoader from "react-loader";
 import {
   ListBranchesDocument,
   useCreateBranchMutation,
-} from "../../gen/graphql-types";
+} from "@gen/graphql-types";
+import { useRouter } from "next/router";
+import { SyntheticEvent, useState } from "react";
+import ReactLoader from "react-loader";
 
 export default function NewBranchForm() {
   const router = useRouter();

@@ -1,7 +1,7 @@
+import Branch from "@components/Branch";
+import Page from "@layouts/page";
 import { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
-import Branch from "../../components/Branch";
-import Page from "../../layouts/page";
 
 type Props = {
   name: string;

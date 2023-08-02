@@ -1,12 +1,12 @@
-import { useRouter } from "next/router";
-import ReactLoader from "react-loader";
-import ReactTimeago from "react-timeago";
 import {
   BranchFragment,
   ListBranchesDocument,
   useDeleteBranchMutation,
   useGetBranchQuery,
-} from "../../gen/graphql-types";
+} from "@gen/graphql-types";
+import { useRouter } from "next/router";
+import ReactLoader from "react-loader";
+import ReactTimeago from "react-timeago";
 
 type Props = {
   name: string;
