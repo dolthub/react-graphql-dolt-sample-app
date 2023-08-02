@@ -20,4 +20,23 @@
 
 .error-msg {
   color: red;
+  margin-top: 10px;
+}
+
+.new-branch-form {
+  margin: 10px 0px;
+
+  > label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  > input {
+    margin-bottom: 10px;
+  }
+
+  > button {
+    display: block;
+    margin-top: 10px;
+  }
 }
