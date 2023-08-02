@@ -30,7 +30,14 @@ export type Branch = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createBranch: Scalars['Boolean']['output'];
   deleteBranch: Scalars['Boolean']['output'];
+};
+
+
+export type MutationCreateBranchArgs = {
+  fromRefName: Scalars['String']['input'];
+  newBranchName: Scalars['String']['input'];
 };
 
 
@@ -69,6 +76,14 @@ export type ListBranchesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type ListBranchesQuery = { __typename?: 'Query', branches: Array<{ __typename?: 'Branch', name: string }> };
+
+export type CreateBranchMutationVariables = Exact<{
+  newBranchName: Scalars['String']['input'];
+  fromRefName: Scalars['String']['input'];
+}>;
+
+
+export type CreateBranchMutation = { __typename?: 'Mutation', createBranch: boolean };
 
 export const BranchFragmentDoc = gql`
     fragment Branch on Branch {
@@ -179,3 +194,35 @@ export function useListBranchesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type ListBranchesQueryHookResult = ReturnType<typeof useListBranchesQuery>;
 export type ListBranchesLazyQueryHookResult = ReturnType<typeof useListBranchesLazyQuery>;
 export type ListBranchesQueryResult = Apollo.QueryResult<ListBranchesQuery, ListBranchesQueryVariables>;
+export const CreateBranchDocument = gql`
+    mutation CreateBranch($newBranchName: String!, $fromRefName: String!) {
+  createBranch(newBranchName: $newBranchName, fromRefName: $fromRefName)
+}
+    `;
+export type CreateBranchMutationFn = Apollo.MutationFunction<CreateBranchMutation, CreateBranchMutationVariables>;
+
+/**
+ * __useCreateBranchMutation__
+ *
+ * To run a mutation, you first call `useCreateBranchMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateBranchMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createBranchMutation, { data, loading, error }] = useCreateBranchMutation({
+ *   variables: {
+ *      newBranchName: // value for 'newBranchName'
+ *      fromRefName: // value for 'fromRefName'
+ *   },
+ * });
+ */
+export function useCreateBranchMutation(baseOptions?: Apollo.MutationHookOptions<CreateBranchMutation, CreateBranchMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreateBranchMutation, CreateBranchMutationVariables>(CreateBranchDocument, options);
+      }
+export type CreateBranchMutationHookResult = ReturnType<typeof useCreateBranchMutation>;
+export type CreateBranchMutationResult = Apollo.MutationResult<CreateBranchMutation>;
+export type CreateBranchMutationOptions = Apollo.BaseMutationOptions<CreateBranchMutation, CreateBranchMutationVariables>;

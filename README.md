@@ -70,6 +70,33 @@ web % yarn dev
 
 And then navigate to http://localhost:3000 in your browser.
 
+## Architecture
+
+### Dolt
+
+[Dolt](https://doltdb.com) is a MySQL-compatible version-controlled database, which
+includes things like branches, commits, diffs, and merges. Dolt can be used with any MySQL
+client, including [Node MySQL](https://www.npmjs.com/package/mysql), which is used in this
+application.
+
+Dolt has a cloud-hosted option called [Hosted Dolt](https://hosted.doltdb.com), which is
+great for creating production applications.
+
+### GraphQL
+
+The [GraphQL](https://graphql.org/) server layer sits between Dolt and the React web
+application. We use the [Nest.js](https://docs.nestjs.com) framework to integrate with a
+Dolt database via [TypeORM](https://github.com/typeorm/typeorm), as well as expose GraphQL
+endpoints via the [GraphQL integration](https://docs.nestjs.com/graphql/quick-start).
+
+### React
+
+This application uses [Next.js](https://nextjs.org/) (a React framework that abstracts and
+automatically configures tooling needed for React, like bundling, compiling), [Apollo
+Client](https://www.apollographql.com/docs/react/) (manages local and remote data with
+GraphQL), and [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) (generates
+Typescript types and React query and mutation hooks based on our GraphQL schema).
+
 ## graphql-server
 
 We use the [NestJS](https://docs.nestjs.com/) framework to build an efficient, scalable
@@ -478,30 +505,3 @@ export default function BranchList() {
   );
 }
 ```
-
-## Architecture
-
-### Dolt
-
-[Dolt](https://doltdb.com) is a MySQL-compatible version-controlled database, which
-includes things like branches, commits, diffs, and merges. Dolt can be used with any MySQL
-client, including [Node MySQL](https://www.npmjs.com/package/mysql), which is used in this
-application.
-
-Dolt has a cloud-hosted option called [Hosted Dolt](https://hosted.doltdb.com), which is
-great for creating production applications.
-
-### GraphQL
-
-The [GraphQL](https://graphql.org/) server layer sits between Dolt and the React web
-application. We use the [Nest.js](https://docs.nestjs.com) framework to integrate with a
-Dolt database via [TypeORM](https://github.com/typeorm/typeorm), as well as expose GraphQL
-endpoints via the [GraphQL integration](https://docs.nestjs.com/graphql/quick-start).
-
-### React
-
-This application uses [Next.js](https://nextjs.org/) (a React framework that abstracts and
-automatically configures tooling needed for React, like bundling, compiling), [Apollo
-Client](https://www.apollographql.com/docs/react/) (manages local and remote data with
-GraphQL), and [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) (generates
-Typescript types and React query and mutation hooks based on our GraphQL schema).

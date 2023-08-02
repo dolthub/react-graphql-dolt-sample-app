@@ -6,6 +6,7 @@ import Page from "../../layouts/page";
 const Branches: NextPage = () => {
   return (
     <Page title="Branches">
+      <Link href="/branches/new">Create a new branch</Link>
       <BranchList />
       <Link href="/">Back to home</Link>
     </Page>

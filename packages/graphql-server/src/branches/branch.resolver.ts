@@ -15,6 +15,15 @@ class GetBranchArgs {
   name: string;
 }
 
+@ArgsType()
+class CreateBranchArgs {
+  @Field()
+  newBranchName: string;
+
+  @Field()
+  fromRefName: string;
+}
+
 @Resolver((_of) => Branch)
 export class BranchResolver {
   constructor(private doltBranchService: DoltBranchesService) {}
@@ -35,5 +44,10 @@ export class BranchResolver {
   @Mutation((_returns) => Boolean)
   async deleteBranch(@Args() args: GetBranchArgs): Promise<boolean> {
     return this.doltBranchService.remove(args.name);
+  }
+
+  @Mutation((_returns) => Boolean)
+  async createBranch(@Args() args: CreateBranchArgs): Promise<boolean> {
+    return this.doltBranchService.create(args.newBranchName, args.fromRefName);
   }
 }

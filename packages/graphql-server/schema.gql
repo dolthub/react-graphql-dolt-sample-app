@@ -23,4 +23,5 @@ type Query {
 
 type Mutation {
   deleteBranch(name: String!): Boolean!
+  createBranch(newBranchName: String!, fromRefName: String!): Boolean!
 }
