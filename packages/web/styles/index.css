@@ -40,3 +40,32 @@
     margin-top: 10px;
   }
 }
+
+.table {
+  margin-bottom: 50px;
+
+  > thead > tr > th {
+    text-align: left;
+    padding: 2px 10px;
+  }
+
+  > tbody > tr > td {
+    padding: 2px 10px;
+  }
+}
+
+.yellow-text {
+  color: rgb(234 179 8);
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.grey-text {
+  color: grey;
+}

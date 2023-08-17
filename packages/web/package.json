@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.17",
+    "@react-icons/all-files": "^4.1.0",
     "isomorphic-unfetch": "^4.0.2",
     "next": "latest",
     "react": "latest",

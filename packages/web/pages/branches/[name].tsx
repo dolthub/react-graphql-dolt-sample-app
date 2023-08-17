@@ -1,5 +1,6 @@
 import Branch from "@components/Branch";
 import Page from "@layouts/page";
+import { branches } from "@lib/routes";
 import { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ const BranchPage: NextPage<Props> = ({ name }) => {
   return (
     <Page title={`Branch ${name}`}>
       <Branch name={name} />
-      <Link href="/branches">Back to branch list</Link>
+      <Link {...branches}>Back to branch list</Link>
     </Page>
   );
 };

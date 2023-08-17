@@ -24,6 +24,22 @@ type Commit {
   message: String!
 }
 
+type DiffSummary {
+  fromTableName: String!
+  toTableName: String!
+  tableName: String!
+  tableType: TableDiffType!
+  hasDataChanges: Boolean!
+  hasSchemaChanges: Boolean!
+}
+
+enum TableDiffType {
+  Added
+  Dropped
+  Modified
+  Renamed
+}
+
 type Pull {
   pullId: Int!
   title: String!
@@ -50,6 +66,7 @@ type Query {
   branches: [Branch!]!
   branch(name: String!): Branch
   twoDotLogs(fromBranchName: String!, toBranchName: String!): [Commit!]!
+  diffSummaries(fromRefName: String!, toRefName: String!): [DiffSummary!]!
   pull(pullId: Int!): Pull
   pulls: [Pull!]!
 }

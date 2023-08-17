@@ -1,4 +1,5 @@
 import { usePullListQuery } from "@gen/graphql-types";
+import { pull } from "@lib/routes";
 import Link from "next/link";
 import ReactLoader from "react-loader";
 
@@ -20,7 +21,7 @@ export default function PullList() {
     <ul>
       {res.data.pulls.map((p) => (
         <li key={p.pullId}>
-          <Link href="/pulls/[pullId]" as={`/pulls/${p.pullId}`}>
+          <Link {...pull(p.pullId)}>
             {p.title} (#{p.pullId})
           </Link>{" "}
           - <span>{p.state}</span>

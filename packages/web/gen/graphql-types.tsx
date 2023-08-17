@@ -37,6 +37,16 @@ export type Commit = {
   message: Scalars['String']['output'];
 };
 
+export type DiffSummary = {
+  __typename?: 'DiffSummary';
+  fromTableName: Scalars['String']['output'];
+  hasDataChanges: Scalars['Boolean']['output'];
+  hasSchemaChanges: Scalars['Boolean']['output'];
+  tableName: Scalars['String']['output'];
+  tableType: TableDiffType;
+  toTableName: Scalars['String']['output'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createBranch: Scalars['Boolean']['output'];
@@ -91,8 +101,10 @@ export type Query = {
   __typename?: 'Query';
   branch?: Maybe<Branch>;
   branches: Array<Branch>;
+  diffSummaries: Array<DiffSummary>;
   pull?: Maybe<Pull>;
   pulls: Array<Pull>;
+  twoDotLogs: Array<Commit>;
 };
 
 
@@ -101,9 +113,28 @@ export type QueryBranchArgs = {
 };
 
 
+export type QueryDiffSummariesArgs = {
+  fromRefName: Scalars['String']['input'];
+  toRefName: Scalars['String']['input'];
+};
+
+
 export type QueryPullArgs = {
   pullId: Scalars['Int']['input'];
 };
+
+
+export type QueryTwoDotLogsArgs = {
+  fromBranchName: Scalars['String']['input'];
+  toBranchName: Scalars['String']['input'];
+};
+
+export enum TableDiffType {
+  Added = 'Added',
+  Dropped = 'Dropped',
+  Modified = 'Modified',
+  Renamed = 'Renamed'
+}
 
 export type BranchFragment = { __typename?: 'Branch', name: string, hash: string, latestCommitter: string, latestCommitMessage: string, latestCommitDate: any };
 
@@ -125,6 +156,16 @@ export type ListBranchesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type ListBranchesQuery = { __typename?: 'Query', branches: Array<{ __typename?: 'Branch', name: string }> };
+
+export type DiffSummaryFragment = { __typename?: 'DiffSummary', fromTableName: string, toTableName: string, tableName: string, tableType: TableDiffType, hasDataChanges: boolean, hasSchemaChanges: boolean };
+
+export type DiffSummariesQueryVariables = Exact<{
+  fromRefName: Scalars['String']['input'];
+  toRefName: Scalars['String']['input'];
+}>;
+
+
+export type DiffSummariesQuery = { __typename?: 'Query', diffSummaries: Array<{ __typename?: 'DiffSummary', fromTableName: string, toTableName: string, tableName: string, tableType: TableDiffType, hasDataChanges: boolean, hasSchemaChanges: boolean }> };
 
 export type CreateBranchMutationVariables = Exact<{
   newBranchName: Scalars['String']['input'];
@@ -170,6 +211,16 @@ export const BranchFragmentDoc = gql`
   latestCommitter
   latestCommitMessage
   latestCommitDate
+}
+    `;
+export const DiffSummaryFragmentDoc = gql`
+    fragment DiffSummary on DiffSummary {
+  fromTableName
+  toTableName
+  tableName
+  tableType
+  hasDataChanges
+  hasSchemaChanges
 }
     `;
 export const CommitFragmentDoc = gql`
@@ -307,6 +358,42 @@ export function useListBranchesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type ListBranchesQueryHookResult = ReturnType<typeof useListBranchesQuery>;
 export type ListBranchesLazyQueryHookResult = ReturnType<typeof useListBranchesLazyQuery>;
 export type ListBranchesQueryResult = Apollo.QueryResult<ListBranchesQuery, ListBranchesQueryVariables>;
+export const DiffSummariesDocument = gql`
+    query DiffSummaries($fromRefName: String!, $toRefName: String!) {
+  diffSummaries(fromRefName: $fromRefName, toRefName: $toRefName) {
+    ...DiffSummary
+  }
+}
+    ${DiffSummaryFragmentDoc}`;
+
+/**
+ * __useDiffSummariesQuery__
+ *
+ * To run a query within a React component, call `useDiffSummariesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useDiffSummariesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useDiffSummariesQuery({
+ *   variables: {
+ *      fromRefName: // value for 'fromRefName'
+ *      toRefName: // value for 'toRefName'
+ *   },
+ * });
+ */
+export function useDiffSummariesQuery(baseOptions: Apollo.QueryHookOptions<DiffSummariesQuery, DiffSummariesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<DiffSummariesQuery, DiffSummariesQueryVariables>(DiffSummariesDocument, options);
+      }
+export function useDiffSummariesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<DiffSummariesQuery, DiffSummariesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<DiffSummariesQuery, DiffSummariesQueryVariables>(DiffSummariesDocument, options);
+        }
+export type DiffSummariesQueryHookResult = ReturnType<typeof useDiffSummariesQuery>;
+export type DiffSummariesLazyQueryHookResult = ReturnType<typeof useDiffSummariesLazyQuery>;
+export type DiffSummariesQueryResult = Apollo.QueryResult<DiffSummariesQuery, DiffSummariesQueryVariables>;
 export const CreateBranchDocument = gql`
     mutation CreateBranch($newBranchName: String!, $fromRefName: String!) {
   createBranch(newBranchName: $newBranchName, fromRefName: $fromRefName)
