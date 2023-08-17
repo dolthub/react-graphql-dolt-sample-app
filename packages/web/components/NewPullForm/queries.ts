@@ -15,7 +15,7 @@ export const CREATE_PULL = gql`
       description: $description
       creatorName: $creatorName
     ) {
-      ...PullListItem
+      ...Pull
     }
   }
 `;

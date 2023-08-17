@@ -1,3 +1,4 @@
+import DiffTable from "@components/DiffTable";
 import { DiffSummaryFragment, useDiffSummariesQuery } from "@gen/graphql-types";
 import { Route } from "@lib/routes";
 import ReactLoader from "react-loader";
@@ -16,7 +17,9 @@ export default function DiffSummary(props: Props) {
   }
   if (res.error) {
     return (
-      <div className="error-msg">Error loading pull: {res.error.message}</div>
+      <div className="error-msg">
+        Error loading diff summaries: {res.error.message}
+      </div>
     );
   }
   if (!res.data?.diffSummaries) {
@@ -48,6 +51,7 @@ export default function DiffSummary(props: Props) {
           ))}
         </tbody>
       </table>
+      <DiffTable params={{ ...props.params, tableName: activeTableName }} />
     </div>
   );
 }

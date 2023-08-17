@@ -6,13 +6,16 @@ import Link from "next/link";
 
 type Props = {
   pullId: string;
-  tableName?: string;
+  tableName: string | null;
 };
 
 const PullDiffPage: NextPage<Props> = ({ pullId, tableName }) => {
   return (
     <Page title={`Pull Request Diff #${pullId}`}>
-      <DiffSummary.ForPull pullId={Number(pullId)} activeTable={tableName} />
+      <DiffSummary.ForPull
+        pullId={Number(pullId)}
+        activeTable={tableName ?? undefined}
+      />
       <Link {...pull(Number(pullId))}>Back to pull request #{pullId}</Link>
     </Page>
   );
@@ -25,7 +28,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
   return {
     props: {
       pullId: params?.pullId ? String(params.pullId) : "",
-      tableName: query.tableName ? String(query.tableName) : undefined,
+      tableName: query.tableName ? String(query.tableName) : null,
     },
   };
 };

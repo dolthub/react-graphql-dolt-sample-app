@@ -22,12 +22,16 @@ export default function ForPull(props: Props) {
     return <div>Pull #{props.pullId} not found</div>;
   }
 
+  // Using the mergeBase as the fromCommitId gets the three dot diff
+  const fromCommitId = res.data.pull.mergeBaseCommit;
+  const toCommitId = res.data.pull.premergeFromCommit;
+
   return (
     <DiffSummary
       {...props}
       params={{
-        fromRefName: res.data.pull.fromBranchName,
-        toRefName: res.data.pull.toBranchName,
+        fromRefName: fromCommitId,
+        toRefName: toCommitId,
       }}
       getTableLink={(tn) => pullDiffTable(props.pullId, tn)}
     />

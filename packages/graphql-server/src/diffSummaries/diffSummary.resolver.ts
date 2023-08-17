@@ -11,6 +11,12 @@ class DiffSummaryArgs {
   toRefName: string;
 }
 
+@ArgsType()
+class TableDiffSummaryArgs extends DiffSummaryArgs {
+  @Field()
+  tableName: string;
+}
+
 @Resolver((_of) => DiffSummary)
 export class DiffSummaryResolver {
   constructor(private readonly dataSource: DataSource) {}
@@ -22,6 +28,18 @@ export class DiffSummaryResolver {
       [args.fromRefName, args.toRefName]
     );
     return res.map(fromDoltDiffSummary).sort(sortByTableName);
+  }
+
+  @Query((_returns) => DiffSummary, { nullable: true })
+  async tableDiffSummary(
+    @Args() args: TableDiffSummaryArgs
+  ): Promise<DiffSummary | undefined> {
+    const res = await this.dataSource.query(
+      "SELECT * FROM DOLT_DIFF_SUMMARY(?, ?, ?)",
+      [args.fromRefName, args.toRefName, args.tableName]
+    );
+    if (!res.length) return undefined;
+    return fromDoltDiffSummary(res[0]);
   }
 }
 

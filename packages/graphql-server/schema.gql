@@ -16,6 +16,12 @@ type Branch {
 """
 scalar Timestamp
 
+type Column {
+  name: String!
+  isPrimaryKey: Boolean!
+  type: String!
+}
+
 type Commit {
   commitHash: String!
   committer: String!
@@ -62,13 +68,40 @@ enum PullState {
   Unspecified
 }
 
+type ColumnValue {
+  displayValue: String!
+}
+
+type Row {
+  columnValues: [ColumnValue!]!
+}
+
+type RowListWithCols {
+  list: [Row!]!
+  columns: [Column!]!
+}
+
+type RowDiff {
+  added: Row
+  deleted: Row
+}
+
+type RowDiffList {
+  list: [RowDiff!]!
+  columns: [Column!]!
+}
+
 type Query {
   branches: [Branch!]!
   branch(name: String!): Branch
+  columns(tableName: String!, refName: String!): [Column!]!
   twoDotLogs(fromBranchName: String!, toBranchName: String!): [Commit!]!
   diffSummaries(fromRefName: String!, toRefName: String!): [DiffSummary!]!
+  tableDiffSummary(fromRefName: String!, toRefName: String!, tableName: String!): DiffSummary
   pull(pullId: Int!): Pull
   pulls: [Pull!]!
+  rowDiffs(fromRefName: String, toRefName: String, tableName: String!): RowDiffList!
+  rowsForDiff(refName: String!, tableName: String!): RowListWithCols!
 }
 
 type Mutation {

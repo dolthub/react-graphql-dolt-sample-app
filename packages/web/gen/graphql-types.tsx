@@ -28,6 +28,18 @@ export type Branch = {
   name: Scalars['ID']['output'];
 };
 
+export type Column = {
+  __typename?: 'Column';
+  isPrimaryKey: Scalars['Boolean']['output'];
+  name: Scalars['String']['output'];
+  type: Scalars['String']['output'];
+};
+
+export type ColumnValue = {
+  __typename?: 'ColumnValue';
+  displayValue: Scalars['String']['output'];
+};
+
 export type Commit = {
   __typename?: 'Commit';
   commitHash: Scalars['String']['output'];
@@ -101,15 +113,25 @@ export type Query = {
   __typename?: 'Query';
   branch?: Maybe<Branch>;
   branches: Array<Branch>;
+  columns: Array<Column>;
   diffSummaries: Array<DiffSummary>;
   pull?: Maybe<Pull>;
   pulls: Array<Pull>;
+  rowDiffs: RowDiffList;
+  rowsForDiff: RowListWithCols;
+  tableDiffSummary?: Maybe<DiffSummary>;
   twoDotLogs: Array<Commit>;
 };
 
 
 export type QueryBranchArgs = {
   name: Scalars['String']['input'];
+};
+
+
+export type QueryColumnsArgs = {
+  refName: Scalars['String']['input'];
+  tableName: Scalars['String']['input'];
 };
 
 
@@ -124,9 +146,52 @@ export type QueryPullArgs = {
 };
 
 
+export type QueryRowDiffsArgs = {
+  fromRefName?: InputMaybe<Scalars['String']['input']>;
+  tableName: Scalars['String']['input'];
+  toRefName?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryRowsForDiffArgs = {
+  refName: Scalars['String']['input'];
+  tableName: Scalars['String']['input'];
+};
+
+
+export type QueryTableDiffSummaryArgs = {
+  fromRefName: Scalars['String']['input'];
+  tableName: Scalars['String']['input'];
+  toRefName: Scalars['String']['input'];
+};
+
+
 export type QueryTwoDotLogsArgs = {
   fromBranchName: Scalars['String']['input'];
   toBranchName: Scalars['String']['input'];
+};
+
+export type Row = {
+  __typename?: 'Row';
+  columnValues: Array<ColumnValue>;
+};
+
+export type RowDiff = {
+  __typename?: 'RowDiff';
+  added?: Maybe<Row>;
+  deleted?: Maybe<Row>;
+};
+
+export type RowDiffList = {
+  __typename?: 'RowDiffList';
+  columns: Array<Column>;
+  list: Array<RowDiff>;
+};
+
+export type RowListWithCols = {
+  __typename?: 'RowListWithCols';
+  columns: Array<Column>;
+  list: Array<Row>;
 };
 
 export enum TableDiffType {
@@ -167,6 +232,25 @@ export type DiffSummariesQueryVariables = Exact<{
 
 export type DiffSummariesQuery = { __typename?: 'Query', diffSummaries: Array<{ __typename?: 'DiffSummary', fromTableName: string, toTableName: string, tableName: string, tableType: TableDiffType, hasDataChanges: boolean, hasSchemaChanges: boolean }> };
 
+export type ColumnFragment = { __typename?: 'Column', name: string, isPrimaryKey: boolean, type: string };
+
+export type ColumnValueFragment = { __typename?: 'ColumnValue', displayValue: string };
+
+export type RowFragment = { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> };
+
+export type RowDiffFragment = { __typename?: 'RowDiff', added?: { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> } | null, deleted?: { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> } | null };
+
+export type RowDiffListWithColsFragment = { __typename?: 'RowDiffList', list: Array<{ __typename?: 'RowDiff', added?: { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> } | null, deleted?: { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> } | null }>, columns: Array<{ __typename?: 'Column', name: string, isPrimaryKey: boolean, type: string }> };
+
+export type RowDiffsQueryVariables = Exact<{
+  tableName: Scalars['String']['input'];
+  fromRefName: Scalars['String']['input'];
+  toRefName: Scalars['String']['input'];
+}>;
+
+
+export type RowDiffsQuery = { __typename?: 'Query', rowDiffs: { __typename?: 'RowDiffList', list: Array<{ __typename?: 'RowDiff', added?: { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> } | null, deleted?: { __typename?: 'Row', columnValues: Array<{ __typename?: 'ColumnValue', displayValue: string }> } | null }>, columns: Array<{ __typename?: 'Column', name: string, isPrimaryKey: boolean, type: string }> } };
+
 export type CreateBranchMutationVariables = Exact<{
   newBranchName: Scalars['String']['input'];
   fromRefName: Scalars['String']['input'];
@@ -184,7 +268,7 @@ export type CreatePullMutationVariables = Exact<{
 }>;
 
 
-export type CreatePullMutation = { __typename?: 'Mutation', createPull: { __typename?: 'Pull', pullId: number, title: string, creatorName: string, createdAt: any, state: PullState } };
+export type CreatePullMutation = { __typename?: 'Mutation', createPull: { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string, commits?: Array<{ __typename?: 'Commit', commitHash: string, committer: string, date: any, message: string }> | null } };
 
 export type CommitFragment = { __typename?: 'Commit', commitHash: string, committer: string, date: any, message: string };
 
@@ -223,6 +307,46 @@ export const DiffSummaryFragmentDoc = gql`
   hasSchemaChanges
 }
     `;
+export const ColumnValueFragmentDoc = gql`
+    fragment ColumnValue on ColumnValue {
+  displayValue
+}
+    `;
+export const RowFragmentDoc = gql`
+    fragment Row on Row {
+  columnValues {
+    ...ColumnValue
+  }
+}
+    ${ColumnValueFragmentDoc}`;
+export const RowDiffFragmentDoc = gql`
+    fragment RowDiff on RowDiff {
+  added {
+    ...Row
+  }
+  deleted {
+    ...Row
+  }
+}
+    ${RowFragmentDoc}`;
+export const ColumnFragmentDoc = gql`
+    fragment Column on Column {
+  name
+  isPrimaryKey
+  type
+}
+    `;
+export const RowDiffListWithColsFragmentDoc = gql`
+    fragment RowDiffListWithCols on RowDiffList {
+  list {
+    ...RowDiff
+  }
+  columns {
+    ...Column
+  }
+}
+    ${RowDiffFragmentDoc}
+${ColumnFragmentDoc}`;
 export const CommitFragmentDoc = gql`
     fragment Commit on Commit {
   commitHash
@@ -394,6 +518,47 @@ export function useDiffSummariesLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
 export type DiffSummariesQueryHookResult = ReturnType<typeof useDiffSummariesQuery>;
 export type DiffSummariesLazyQueryHookResult = ReturnType<typeof useDiffSummariesLazyQuery>;
 export type DiffSummariesQueryResult = Apollo.QueryResult<DiffSummariesQuery, DiffSummariesQueryVariables>;
+export const RowDiffsDocument = gql`
+    query RowDiffs($tableName: String!, $fromRefName: String!, $toRefName: String!) {
+  rowDiffs(
+    tableName: $tableName
+    fromRefName: $fromRefName
+    toRefName: $toRefName
+  ) {
+    ...RowDiffListWithCols
+  }
+}
+    ${RowDiffListWithColsFragmentDoc}`;
+
+/**
+ * __useRowDiffsQuery__
+ *
+ * To run a query within a React component, call `useRowDiffsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useRowDiffsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useRowDiffsQuery({
+ *   variables: {
+ *      tableName: // value for 'tableName'
+ *      fromRefName: // value for 'fromRefName'
+ *      toRefName: // value for 'toRefName'
+ *   },
+ * });
+ */
+export function useRowDiffsQuery(baseOptions: Apollo.QueryHookOptions<RowDiffsQuery, RowDiffsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<RowDiffsQuery, RowDiffsQueryVariables>(RowDiffsDocument, options);
+      }
+export function useRowDiffsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RowDiffsQuery, RowDiffsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<RowDiffsQuery, RowDiffsQueryVariables>(RowDiffsDocument, options);
+        }
+export type RowDiffsQueryHookResult = ReturnType<typeof useRowDiffsQuery>;
+export type RowDiffsLazyQueryHookResult = ReturnType<typeof useRowDiffsLazyQuery>;
+export type RowDiffsQueryResult = Apollo.QueryResult<RowDiffsQuery, RowDiffsQueryVariables>;
 export const CreateBranchDocument = gql`
     mutation CreateBranch($newBranchName: String!, $fromRefName: String!) {
   createBranch(newBranchName: $newBranchName, fromRefName: $fromRefName)
@@ -435,10 +600,10 @@ export const CreatePullDocument = gql`
     description: $description
     creatorName: $creatorName
   ) {
-    ...PullListItem
+    ...Pull
   }
 }
-    ${PullListItemFragmentDoc}`;
+    ${PullFragmentDoc}`;
 export type CreatePullMutationFn = Apollo.MutationFunction<CreatePullMutation, CreatePullMutationVariables>;
 
 /**

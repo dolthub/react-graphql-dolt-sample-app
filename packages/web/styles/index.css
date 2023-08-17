@@ -21,6 +21,7 @@
 .error-msg {
   color: red;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .form {
@@ -43,6 +44,7 @@
 
 .table {
   margin-bottom: 50px;
+  border-collapse: collapse;
 
   > thead > tr > th {
     text-align: left;
@@ -58,14 +60,24 @@
   color: rgb(234 179 8);
 }
 
-.red-text {
+.red-text,
+.deleted-cell {
   color: red;
 }
 
-.green-text {
+.green-text,
+.added-cell {
   color: green;
 }
 
 .grey-text {
   color: grey;
+}
+
+.deleted-row {
+  background-color: #ffe6e6;
+}
+
+.added-row {
+  background-color: #e6ffe6;
 }
