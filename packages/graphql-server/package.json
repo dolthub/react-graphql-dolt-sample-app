@@ -5,6 +5,7 @@
   "author": "DoltHub",
   "scripts": {
     "build": "nest build",
+    "check-server": "./ci-helper.sh ./",
     "compile": "tsc -b",
     "dev": "NODE_ENV=development nest start --watch",
     "start": "nest start",
