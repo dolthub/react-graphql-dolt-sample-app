@@ -1,17 +1,6 @@
 import { Field, GraphQLTimestamp, Int, ObjectType } from "@nestjs/graphql";
+import { Commit } from "../commits/commit.model";
 import { PullState } from "./pull.enums";
-
-@ObjectType()
-export class MergeState {
-  @Field()
-  premergeFromCommit: string;
-
-  @Field()
-  premergeToCommit: string;
-
-  @Field()
-  mergeBaseCommit: string;
-}
 
 @ObjectType()
 export class Pull {
@@ -47,4 +36,7 @@ export class Pull {
 
   @Field()
   mergeBaseCommit: string;
+
+  @Field((_type) => [Commit], { nullable: true })
+  commits?: Commit[];
 }

@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { Pull } from "src/pulls/pull.model";
+import { Pull } from "../pulls/pull.model";
 
 const fileName = "store.json";
 

@@ -4,10 +4,14 @@ import {
   Field,
   Int,
   Mutation,
+  Parent,
   Query,
+  ResolveField,
   Resolver,
 } from "@nestjs/graphql";
 import { DataSource } from "typeorm";
+import { Commit } from "../commits/commit.model";
+import { CommitResolver } from "../commits/commit.resolver";
 import { FileStoreService } from "../fileStore/fileStore.service";
 import { PullState } from "./pull.enums";
 import { Pull } from "./pull.model";
@@ -40,7 +44,8 @@ class CreatePullArgs {
 export class PullResolver {
   constructor(
     private readonly fileStore: FileStoreService,
-    private dataSource: DataSource
+    private readonly dataSource: DataSource,
+    private readonly commitResolver: CommitResolver
   ) {}
 
   @Query((_returns) => Pull, { nullable: true })
@@ -54,6 +59,14 @@ export class PullResolver {
   async pulls(): Promise<Pull[]> {
     const pulls = await this.fileStore.readPulls();
     return pulls.map(toPullModel);
+  }
+
+  @ResolveField((_returns) => [Commit])
+  async commits(@Parent() pull: Pull): Promise<Commit[]> {
+    return this.commitResolver.twoDotLogs({
+      fromBranchName: pull.fromBranchName,
+      toBranchName: pull.toBranchName,
+    });
   }
 
   @Mutation((_returns) => Pull)

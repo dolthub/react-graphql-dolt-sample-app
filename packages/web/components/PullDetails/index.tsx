@@ -1,6 +1,7 @@
 import { useGetPullQuery } from "@gen/graphql-types";
 import Link from "next/link";
 import ReactLoader from "react-loader";
+import CommitList from "./CommitList";
 
 type Props = {
   pullId: number;
@@ -37,6 +38,7 @@ export default function PullDetails(props: Props) {
         </Link>
       </div>
       <p>{pull.description}</p>
+      <CommitList commits={pull.commits ?? undefined} />
     </div>
   );
 }

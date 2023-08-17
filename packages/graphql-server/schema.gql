@@ -16,6 +16,14 @@ type Branch {
 """
 scalar Timestamp
 
+type Commit {
+  commitHash: String!
+  committer: String!
+  committerEmail: String!
+  date: Timestamp!
+  message: String!
+}
+
 type Pull {
   pullId: Int!
   title: String!
@@ -28,6 +36,7 @@ type Pull {
   premergeFromCommit: String!
   premergeToCommit: String!
   mergeBaseCommit: String!
+  commits: [Commit!]
 }
 
 enum PullState {
@@ -40,6 +49,7 @@ enum PullState {
 type Query {
   branches: [Branch!]!
   branch(name: String!): Branch
+  twoDotLogs(fromBranchName: String!, toBranchName: String!): [Commit!]!
   pull(pullId: Int!): Pull
   pulls: [Pull!]!
 }

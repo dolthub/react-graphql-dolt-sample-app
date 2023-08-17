@@ -28,6 +28,15 @@ export type Branch = {
   name: Scalars['ID']['output'];
 };
 
+export type Commit = {
+  __typename?: 'Commit';
+  commitHash: Scalars['String']['output'];
+  committer: Scalars['String']['output'];
+  committerEmail: Scalars['String']['output'];
+  date: Scalars['Timestamp']['output'];
+  message: Scalars['String']['output'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createBranch: Scalars['Boolean']['output'];
@@ -57,6 +66,7 @@ export type MutationDeleteBranchArgs = {
 
 export type Pull = {
   __typename?: 'Pull';
+  commits?: Maybe<Array<Commit>>;
   createdAt: Scalars['Timestamp']['output'];
   creatorName: Scalars['String']['output'];
   description: Scalars['String']['output'];
@@ -133,21 +143,25 @@ export type CreatePullMutationVariables = Exact<{
 }>;
 
 
-export type CreatePullMutation = { __typename?: 'Mutation', createPull: { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string } };
+export type CreatePullMutation = { __typename?: 'Mutation', createPull: { __typename?: 'Pull', pullId: number, title: string, creatorName: string, createdAt: any, state: PullState } };
+
+export type CommitFragment = { __typename?: 'Commit', commitHash: string, committer: string, date: any, message: string };
+
+export type PullFragment = { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string, commits?: Array<{ __typename?: 'Commit', commitHash: string, committer: string, date: any, message: string }> | null };
 
 export type GetPullQueryVariables = Exact<{
   pullId: Scalars['Int']['input'];
 }>;
 
 
-export type GetPullQuery = { __typename?: 'Query', pull?: { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string } | null };
+export type GetPullQuery = { __typename?: 'Query', pull?: { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string, commits?: Array<{ __typename?: 'Commit', commitHash: string, committer: string, date: any, message: string }> | null } | null };
 
-export type PullFragment = { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string };
+export type PullListItemFragment = { __typename?: 'Pull', pullId: number, title: string, creatorName: string, createdAt: any, state: PullState };
 
 export type PullListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PullListQuery = { __typename?: 'Query', pulls: Array<{ __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string }> };
+export type PullListQuery = { __typename?: 'Query', pulls: Array<{ __typename?: 'Pull', pullId: number, title: string, creatorName: string, createdAt: any, state: PullState }> };
 
 export const BranchFragmentDoc = gql`
     fragment Branch on Branch {
@@ -156,6 +170,14 @@ export const BranchFragmentDoc = gql`
   latestCommitter
   latestCommitMessage
   latestCommitDate
+}
+    `;
+export const CommitFragmentDoc = gql`
+    fragment Commit on Commit {
+  commitHash
+  committer
+  date
+  message
 }
     `;
 export const PullFragmentDoc = gql`
@@ -171,6 +193,18 @@ export const PullFragmentDoc = gql`
   premergeFromCommit
   premergeToCommit
   mergeBaseCommit
+  commits {
+    ...Commit
+  }
+}
+    ${CommitFragmentDoc}`;
+export const PullListItemFragmentDoc = gql`
+    fragment PullListItem on Pull {
+  pullId
+  title
+  creatorName
+  createdAt
+  state
 }
     `;
 export const GetBranchDocument = gql`
@@ -314,10 +348,10 @@ export const CreatePullDocument = gql`
     description: $description
     creatorName: $creatorName
   ) {
-    ...Pull
+    ...PullListItem
   }
 }
-    ${PullFragmentDoc}`;
+    ${PullListItemFragmentDoc}`;
 export type CreatePullMutationFn = Apollo.MutationFunction<CreatePullMutation, CreatePullMutationVariables>;
 
 /**
@@ -386,10 +420,10 @@ export type GetPullQueryResult = Apollo.QueryResult<GetPullQuery, GetPullQueryVa
 export const PullListDocument = gql`
     query PullList {
   pulls {
-    ...Pull
+    ...PullListItem
   }
 }
-    ${PullFragmentDoc}`;
+    ${PullListItemFragmentDoc}`;
 
 /**
  * __usePullListQuery__
