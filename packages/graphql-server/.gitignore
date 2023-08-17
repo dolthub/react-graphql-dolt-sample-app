@@ -5,6 +5,7 @@
 
 # Local secrets
 *.env
+store.json
 
 # Logs
 *.log

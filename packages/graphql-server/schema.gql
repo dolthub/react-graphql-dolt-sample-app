@@ -16,12 +16,36 @@ type Branch {
 """
 scalar Timestamp
 
+type Pull {
+  pullId: Int!
+  title: String!
+  description: String!
+  creatorName: String!
+  fromBranchName: String!
+  toBranchName: String!
+  createdAt: Timestamp!
+  state: PullState!
+  premergeFromCommit: String!
+  premergeToCommit: String!
+  mergeBaseCommit: String!
+}
+
+enum PullState {
+  Open
+  Closed
+  Merged
+  Unspecified
+}
+
 type Query {
   branches: [Branch!]!
   branch(name: String!): Branch
+  pull(pullId: Int!): Pull
+  pulls: [Pull!]!
 }
 
 type Mutation {
   deleteBranch(name: String!): Boolean!
   createBranch(newBranchName: String!, fromRefName: String!): Boolean!
+  createPull(title: String!, description: String!, fromBranchName: String!, toBranchName: String!, creatorName: String!): Pull!
 }
