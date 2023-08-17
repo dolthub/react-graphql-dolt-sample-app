@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "ci": "npm-run-all compile lint",
     "compile": "npm-run-all 'compile:*'",
     "compile:graphql": "yarn workspace @sample/graphql-server compile",
     "compile:web": "yarn workspace @sample/web compile",
