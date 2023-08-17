@@ -14,6 +14,7 @@ export default function NewPullForm() {
     description: "",
     creatorName: "",
   });
+  const disabled = !state.toBranchName || !state.fromBranchName || !state.title;
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -71,10 +72,13 @@ export default function NewPullForm() {
           value={state.creatorName}
           onChange={(e) => setState({ creatorName: e.target.value })}
         />
-        <button type="submit">Create pull request</button>
+        <button type="submit" disabled={disabled}>
+          Create pull request
+        </button>
+
         {createRes.error && (
           <div className="error-msg">
-            Error creating branch: {createRes.error.message}
+            Error creating pull request: {createRes.error.message}
           </div>
         )}
         <ReactLoader loaded={!createRes.loading} />
