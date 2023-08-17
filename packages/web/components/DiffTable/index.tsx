@@ -18,23 +18,25 @@ function Inner(props: Props) {
       </div>
     );
   }
+
   if (!res.data?.rowDiffs.list.length) {
     return <div>No data changes found</div>;
   }
+  const { rowDiffs } = res.data;
   return (
     <table className="table">
       <thead>
         <tr>
           <th />
-          {res.data.rowDiffs.columns.map((c) => (
+          {rowDiffs.columns.map((c) => (
             <th key={c.name}>{c.name}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {res.data.rowDiffs.list.map((rd) => (
+        {rowDiffs.list.map((rd) => (
           // eslint-disable-next-line react/jsx-key
-          <Row rowDiff={rd} cols={res.data.rowDiffs.columns} />
+          <Row rowDiff={rd} cols={rowDiffs.columns} />
         ))}
       </tbody>
     </table>

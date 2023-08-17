@@ -1,6 +1,6 @@
 import { Args, ArgsType, Field, Query, Resolver } from "@nestjs/graphql";
-import { ColumnResolver } from "src/columns/column.resolver";
 import { DataSource } from "typeorm";
+import { ColumnResolver } from "../columns/column.resolver";
 import { Row, RowListWithCols, fromDoltListRowWithColsRes } from "./row.model";
 
 @ArgsType()

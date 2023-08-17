@@ -21,7 +21,6 @@ export class ColumnResolver {
       args.tableName,
       args.refName,
     ]);
-    // console.log("columns", res);
     return res.map(fromDoltRowRes);
   }
 }
