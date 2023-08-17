@@ -5,9 +5,16 @@
     "packages/*"
   ],
   "scripts": {
+    "ci": "npm-run-all compile lint build",
+    "check": "npm-run-all 'check:*'",
+    "check:graphql": "yarn workspace @sample/graphql-server run check-server",
+    "check:status": "./check-status.sh",
     "compile": "npm-run-all 'compile:*'",
     "compile:graphql": "yarn workspace @sample/graphql-server compile",
     "compile:web": "yarn workspace @sample/web compile",
+    "build": "npm-run-all 'build:*'",
+    "build:graphql": "yarn workspace @sample/graphql-server build",
+    "build:web": "yarn workspace @sample/web build",
     "lint": "npm-run-all 'lint:*'",
     "lint:web": "yarn workspace @sample/web lint"
   },
