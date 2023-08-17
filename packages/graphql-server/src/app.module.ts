@@ -5,6 +5,7 @@ import { GraphQLModule } from "@nestjs/graphql";
 import { TerminusModule } from "@nestjs/terminus";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { DoltBranchesModule } from "./doltBranches/doltBranch.module";
+import { FileStoreModule } from "./fileStore/fileStore.module";
 import resolvers from "./resolvers";
 
 @Module({
@@ -33,6 +34,7 @@ import resolvers from "./resolvers";
       inject: [ConfigService],
     }),
     DoltBranchesModule,
+    FileStoreModule,
     TerminusModule,
   ],
   providers: resolvers,

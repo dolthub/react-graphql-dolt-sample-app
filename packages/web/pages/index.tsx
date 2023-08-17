@@ -5,7 +5,12 @@ import Link from "next/link";
 const Home: NextPage = () => {
   return (
     <Page title="Home">
-      <Link href="/branches">View branches</Link>
+      <div>
+        <Link href="/branches">View branches</Link>
+      </div>
+      <div>
+        <Link href="/pulls">View pull requests</Link>
+      </div>
     </Page>
   );
 };
