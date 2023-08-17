@@ -14,7 +14,7 @@ type Props = {
 
 export default function Row(props: Props) {
   return (
-    <tr key={props.ds.tableName}>
+    <tr>
       <td>
         <StatIcon tableType={props.ds.tableType} />
       </td>
