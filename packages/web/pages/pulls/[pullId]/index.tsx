@@ -1,5 +1,6 @@
 import PullDetails from "@components/PullDetails";
 import Page from "@layouts/page";
+import { pulls } from "@lib/routes";
 import { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ const PullPage: NextPage<Props> = ({ pullId }) => {
   return (
     <Page title={`Pull Request #${pullId}`}>
       <PullDetails pullId={Number(pullId)} />
-      <Link href="/pulls">Back to pull requests</Link>
+      <Link {...pulls}>Back to pull requests</Link>
     </Page>
   );
 };
