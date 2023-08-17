@@ -31,6 +31,7 @@ export type Branch = {
 export type Mutation = {
   __typename?: 'Mutation';
   createBranch: Scalars['Boolean']['output'];
+  createPull: Pull;
   deleteBranch: Scalars['Boolean']['output'];
 };
 
@@ -41,19 +42,57 @@ export type MutationCreateBranchArgs = {
 };
 
 
+export type MutationCreatePullArgs = {
+  creatorName: Scalars['String']['input'];
+  description: Scalars['String']['input'];
+  fromBranchName: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+  toBranchName: Scalars['String']['input'];
+};
+
+
 export type MutationDeleteBranchArgs = {
   name: Scalars['String']['input'];
 };
+
+export type Pull = {
+  __typename?: 'Pull';
+  createdAt: Scalars['Timestamp']['output'];
+  creatorName: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  fromBranchName: Scalars['String']['output'];
+  mergeBaseCommit: Scalars['String']['output'];
+  premergeFromCommit: Scalars['String']['output'];
+  premergeToCommit: Scalars['String']['output'];
+  pullId: Scalars['Int']['output'];
+  state: PullState;
+  title: Scalars['String']['output'];
+  toBranchName: Scalars['String']['output'];
+};
+
+export enum PullState {
+  Closed = 'Closed',
+  Merged = 'Merged',
+  Open = 'Open',
+  Unspecified = 'Unspecified'
+}
 
 export type Query = {
   __typename?: 'Query';
   branch?: Maybe<Branch>;
   branches: Array<Branch>;
+  pull?: Maybe<Pull>;
+  pulls: Array<Pull>;
 };
 
 
 export type QueryBranchArgs = {
   name: Scalars['String']['input'];
+};
+
+
+export type QueryPullArgs = {
+  pullId: Scalars['Int']['input'];
 };
 
 export type BranchFragment = { __typename?: 'Branch', name: string, hash: string, latestCommitter: string, latestCommitMessage: string, latestCommitDate: any };
@@ -85,6 +124,31 @@ export type CreateBranchMutationVariables = Exact<{
 
 export type CreateBranchMutation = { __typename?: 'Mutation', createBranch: boolean };
 
+export type CreatePullMutationVariables = Exact<{
+  fromBranchName: Scalars['String']['input'];
+  toBranchName: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+  description: Scalars['String']['input'];
+  creatorName: Scalars['String']['input'];
+}>;
+
+
+export type CreatePullMutation = { __typename?: 'Mutation', createPull: { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string } };
+
+export type GetPullQueryVariables = Exact<{
+  pullId: Scalars['Int']['input'];
+}>;
+
+
+export type GetPullQuery = { __typename?: 'Query', pull?: { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string } | null };
+
+export type PullFragment = { __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string };
+
+export type PullListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PullListQuery = { __typename?: 'Query', pulls: Array<{ __typename?: 'Pull', pullId: number, title: string, description: string, creatorName: string, fromBranchName: string, toBranchName: string, createdAt: any, state: PullState, premergeFromCommit: string, premergeToCommit: string, mergeBaseCommit: string }> };
+
 export const BranchFragmentDoc = gql`
     fragment Branch on Branch {
   name
@@ -92,6 +156,21 @@ export const BranchFragmentDoc = gql`
   latestCommitter
   latestCommitMessage
   latestCommitDate
+}
+    `;
+export const PullFragmentDoc = gql`
+    fragment Pull on Pull {
+  pullId
+  title
+  description
+  creatorName
+  fromBranchName
+  toBranchName
+  createdAt
+  state
+  premergeFromCommit
+  premergeToCommit
+  mergeBaseCommit
 }
     `;
 export const GetBranchDocument = gql`
@@ -226,3 +305,115 @@ export function useCreateBranchMutation(baseOptions?: Apollo.MutationHookOptions
 export type CreateBranchMutationHookResult = ReturnType<typeof useCreateBranchMutation>;
 export type CreateBranchMutationResult = Apollo.MutationResult<CreateBranchMutation>;
 export type CreateBranchMutationOptions = Apollo.BaseMutationOptions<CreateBranchMutation, CreateBranchMutationVariables>;
+export const CreatePullDocument = gql`
+    mutation CreatePull($fromBranchName: String!, $toBranchName: String!, $title: String!, $description: String!, $creatorName: String!) {
+  createPull(
+    fromBranchName: $fromBranchName
+    toBranchName: $toBranchName
+    title: $title
+    description: $description
+    creatorName: $creatorName
+  ) {
+    ...Pull
+  }
+}
+    ${PullFragmentDoc}`;
+export type CreatePullMutationFn = Apollo.MutationFunction<CreatePullMutation, CreatePullMutationVariables>;
+
+/**
+ * __useCreatePullMutation__
+ *
+ * To run a mutation, you first call `useCreatePullMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreatePullMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createPullMutation, { data, loading, error }] = useCreatePullMutation({
+ *   variables: {
+ *      fromBranchName: // value for 'fromBranchName'
+ *      toBranchName: // value for 'toBranchName'
+ *      title: // value for 'title'
+ *      description: // value for 'description'
+ *      creatorName: // value for 'creatorName'
+ *   },
+ * });
+ */
+export function useCreatePullMutation(baseOptions?: Apollo.MutationHookOptions<CreatePullMutation, CreatePullMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreatePullMutation, CreatePullMutationVariables>(CreatePullDocument, options);
+      }
+export type CreatePullMutationHookResult = ReturnType<typeof useCreatePullMutation>;
+export type CreatePullMutationResult = Apollo.MutationResult<CreatePullMutation>;
+export type CreatePullMutationOptions = Apollo.BaseMutationOptions<CreatePullMutation, CreatePullMutationVariables>;
+export const GetPullDocument = gql`
+    query GetPull($pullId: Int!) {
+  pull(pullId: $pullId) {
+    ...Pull
+  }
+}
+    ${PullFragmentDoc}`;
+
+/**
+ * __useGetPullQuery__
+ *
+ * To run a query within a React component, call `useGetPullQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPullQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPullQuery({
+ *   variables: {
+ *      pullId: // value for 'pullId'
+ *   },
+ * });
+ */
+export function useGetPullQuery(baseOptions: Apollo.QueryHookOptions<GetPullQuery, GetPullQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetPullQuery, GetPullQueryVariables>(GetPullDocument, options);
+      }
+export function useGetPullLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPullQuery, GetPullQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetPullQuery, GetPullQueryVariables>(GetPullDocument, options);
+        }
+export type GetPullQueryHookResult = ReturnType<typeof useGetPullQuery>;
+export type GetPullLazyQueryHookResult = ReturnType<typeof useGetPullLazyQuery>;
+export type GetPullQueryResult = Apollo.QueryResult<GetPullQuery, GetPullQueryVariables>;
+export const PullListDocument = gql`
+    query PullList {
+  pulls {
+    ...Pull
+  }
+}
+    ${PullFragmentDoc}`;
+
+/**
+ * __usePullListQuery__
+ *
+ * To run a query within a React component, call `usePullListQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePullListQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePullListQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePullListQuery(baseOptions?: Apollo.QueryHookOptions<PullListQuery, PullListQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PullListQuery, PullListQueryVariables>(PullListDocument, options);
+      }
+export function usePullListLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PullListQuery, PullListQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PullListQuery, PullListQueryVariables>(PullListDocument, options);
+        }
+export type PullListQueryHookResult = ReturnType<typeof usePullListQuery>;
+export type PullListLazyQueryHookResult = ReturnType<typeof usePullListLazyQuery>;
+export type PullListQueryResult = Apollo.QueryResult<PullListQuery, PullListQueryVariables>;

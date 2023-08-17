@@ -13,6 +13,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@gen/*": ["gen/*"],
+      "@hooks/*": ["hooks/*"],
       "@layouts/*": ["layouts/*"],
       "@lib/*": ["lib/*"],
     }

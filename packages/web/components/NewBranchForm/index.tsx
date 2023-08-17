@@ -27,7 +27,7 @@ export default function NewBranchForm() {
 
   return (
     <div>
-      <form onSubmit={onSubmit} className="new-branch-form">
+      <form onSubmit={onSubmit} className="form">
         <label htmlFor="branch-name">Name</label>
         <input
           type="text"
