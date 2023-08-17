@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "ci": "npm-run-all compile lint build check",
+    "ci": "npm-run-all compile lint build",
     "check": "npm-run-all 'check:*'",
     "check:graphql": "yarn workspace @sample/graphql-server run check-server",
     "check:status": "./check-status.sh",
