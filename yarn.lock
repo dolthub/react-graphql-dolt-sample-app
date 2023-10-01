@@ -140,9 +140,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.8.1":
-  version: 3.8.1
-  resolution: "@apollo/client@npm:3.8.1"
+"@apollo/client@npm:^3.8.4":
+  version: 3.8.4
+  resolution: "@apollo/client@npm:3.8.4"
   dependencies:
     "@graphql-typed-document-node/core": ^3.1.1
     "@wry/context": ^0.7.3
@@ -172,7 +172,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: 3a1748359a7c0f339764e7764dc6c7426be1d522eda963416d3a693733edbce8408cb8f78f9c98b036d34621af663e3dd3446703dfd29037c78a77eacd3c70bb
+  checksum: 509e37cdce7462cacda0a86c413ce471cd8f618625fb8ac3a60d6347d12f37a4fc60e12fc3fc1a375799caa21e56ff58d709e13ef5e13ab15e4dfc828a527848
   languageName: node
   linkType: hard
 
@@ -2494,7 +2494,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sample/web@workspace:packages/web"
   dependencies:
-    "@apollo/client": ^3.8.1
+    "@apollo/client": ^3.8.4
     "@graphql-codegen/cli": ^5.0.0
     "@graphql-codegen/introspection": ^4.0.0
     "@graphql-codegen/typescript": ^4.0.1
