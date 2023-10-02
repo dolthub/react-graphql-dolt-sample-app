@@ -2072,19 +2072,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^10.1.3":
-  version: 10.1.3
-  resolution: "@nestjs/platform-express@npm:10.1.3"
+"@nestjs/platform-express@npm:^10.2.6":
+  version: 10.2.6
+  resolution: "@nestjs/platform-express@npm:10.2.6"
   dependencies:
     body-parser: 1.20.2
     cors: 2.8.5
     express: 4.18.2
     multer: 1.4.4-lts.1
-    tslib: 2.6.1
+    tslib: 2.6.2
   peerDependencies:
     "@nestjs/common": ^10.0.0
     "@nestjs/core": ^10.0.0
-  checksum: 702f21094b063480e95c1c45a7cbe3d863dcb16a1a9f156323967785d61bfe1a9ccec864b997358a6b5bd147c7720069d088eefe51aaf4814e4023b38e8adaeb
+  checksum: b833fcad82fb40b5cdadc7abb8e0f24cecc17d2af2dd79bbcc9e19bc747cd194ba539197ba21350f9fc86a0072ebaf1ef313f8123a4d84ed0a4edbe779f2bc2e
   languageName: node
   linkType: hard
 
@@ -2477,7 +2477,7 @@ __metadata:
     "@nestjs/config": ^3.0.0
     "@nestjs/core": ^10.2.4
     "@nestjs/graphql": ^12.0.8
-    "@nestjs/platform-express": ^10.1.3
+    "@nestjs/platform-express": ^10.2.6
     "@nestjs/schematics": ^10.0.2
     "@nestjs/terminus": ^10.0.1
     "@nestjs/typeorm": ^10.0.0
@@ -9825,17 +9825,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.6.1, tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0":
-  version: 2.6.1
-  resolution: "tslib@npm:2.6.1"
-  checksum: b0d176d176487905b66ae4d5856647df50e37beea7571c53b8d10ba9222c074b81f1410fb91da13debaf2cbc970663609068bdebafa844ea9d69b146527c38fe
-  languageName: node
-  linkType: hard
-
 "tslib@npm:2.6.2":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0":
+  version: 2.6.1
+  resolution: "tslib@npm:2.6.1"
+  checksum: b0d176d176487905b66ae4d5856647df50e37beea7571c53b8d10ba9222c074b81f1410fb91da13debaf2cbc970663609068bdebafa844ea9d69b146527c38fe
   languageName: node
   linkType: hard
 
