@@ -1900,14 +1900,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/apollo@npm:^12.0.7":
-  version: 12.0.7
-  resolution: "@nestjs/apollo@npm:12.0.7"
+"@nestjs/apollo@npm:^12.0.9":
+  version: 12.0.9
+  resolution: "@nestjs/apollo@npm:12.0.9"
   dependencies:
     "@apollo/server-plugin-landing-page-graphql-playground": 4.0.0
     iterall: 1.3.0
     lodash.omit: 4.5.0
-    tslib: 2.6.0
+    tslib: 2.6.2
   peerDependencies:
     "@apollo/gateway": ^2.0.0
     "@apollo/server": ^4.3.2
@@ -1924,7 +1924,7 @@ __metadata:
       optional: true
     "@as-integrations/fastify":
       optional: true
-  checksum: fd33cd07673756fc7f9097981ab38a7541a73400effff13f9bce6b8996f3bf3893ad9d101e5b5d4eadbdc8d9a515390bb5c61409a6adf79c82e1ade96259edd6
+  checksum: 6c22eb5f3dc3dab0574f142caa9b8dd0592236baf117e6c06d88cfd0f0a2e43bc2df331429516947f16ba75d20931ed1fd0e6677a39d30128692b90827fa153f
   languageName: node
   linkType: hard
 
@@ -2488,7 +2488,7 @@ __metadata:
   resolution: "@sample/graphql-server@workspace:packages/graphql-server"
   dependencies:
     "@apollo/server": ^4.9.5
-    "@nestjs/apollo": ^12.0.7
+    "@nestjs/apollo": ^12.0.9
     "@nestjs/cli": ^10.1.17
     "@nestjs/common": ^10.2.4
     "@nestjs/config": ^3.1.1
