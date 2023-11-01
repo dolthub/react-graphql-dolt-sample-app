@@ -2518,7 +2518,7 @@ __metadata:
     "@graphql-codegen/typescript-react-apollo": ^4.0.0
     "@react-icons/all-files": ^4.1.0
     "@types/react": ^18.2.24
-    "@types/react-loader": ^2.4.6
+    "@types/react-loader": ^2.4.7
     "@types/react-timeago": ^4.1.3
     eslint: 8.50.0
     eslint-config-next: 13.4.19
@@ -2727,12 +2727,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-loader@npm:^2.4.6":
-  version: 2.4.6
-  resolution: "@types/react-loader@npm:2.4.6"
+"@types/react-loader@npm:^2.4.7":
+  version: 2.4.7
+  resolution: "@types/react-loader@npm:2.4.7"
   dependencies:
     "@types/react": "*"
-  checksum: 9226fe93ea41b14c856ea4de231480d268f2d5609650eacaa9319be88de6a6ded46868ab4a558d9a9e3b9bdaa5fe8b38d7505a71cedcd87d30b2118fe5a42f5f
+  checksum: 5c9e92163ca733bf6c0dc1ece7bf9904908c2ee14892760410ec81d60eadbcbc10cc113eaa367398b0259ba3ee4a2879176d99ba6342669f77c1f5d539f793fd
   languageName: node
   linkType: hard
 
