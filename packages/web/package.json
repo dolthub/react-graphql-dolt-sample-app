@@ -27,7 +27,7 @@
     "@graphql-codegen/introspection": "^4.0.0",
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-operations": "^4.0.1",
-    "@graphql-codegen/typescript-react-apollo": "^4.0.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.1.0",
     "@types/react": "^18.2.39",
     "@types/react-loader": "^2.4.7",
     "@types/react-timeago": "^4.1.6",
