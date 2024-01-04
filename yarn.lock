@@ -2510,7 +2510,7 @@ __metadata:
     "@nestjs/typeorm": ^10.0.0
     cors: ^2.8.5
     graphql: ^16.8.1
-    mysql2: ^3.6.2
+    mysql2: ^3.6.5
     reflect-metadata: ^0.1.13
     typeorm: ^0.3.17
     typescript: ^5.2.2
@@ -7899,9 +7899,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mysql2@npm:^3.6.2":
-  version: 3.6.2
-  resolution: "mysql2@npm:3.6.2"
+"mysql2@npm:^3.6.5":
+  version: 3.6.5
+  resolution: "mysql2@npm:3.6.5"
   dependencies:
     denque: ^2.1.0
     generate-function: ^2.3.1
@@ -7911,7 +7911,7 @@ __metadata:
     named-placeholders: ^1.1.3
     seq-queue: ^0.0.5
     sqlstring: ^2.3.2
-  checksum: 819d7649536db477511236ea9597062ddb5ec2f60127132239b93b1c4bf7a2af182893f0eabc2a4b2c9c4f6eb1770b6e93a7d0a7f9739ae339480b6c8c608a14
+  checksum: 1fb6aef940818dc5368840459e33a2c273698b08633015c196d67df3ee47bd3806b6c428ec4ca020cb3df4dc63e7d79cc5361caa7521b2b75cfd0fc9e8301fc9
   languageName: node
   linkType: hard
 
