@@ -2481,7 +2481,7 @@ __metadata:
     cors: ^2.8.5
     graphql: ^16.8.1
     mysql2: ^3.6.5
-    reflect-metadata: ^0.1.13
+    reflect-metadata: ^0.2.1
     typeorm: ^0.3.17
     typescript: ^5.2.2
   languageName: unknown
@@ -9009,6 +9009,13 @@ __metadata:
   version: 0.1.13
   resolution: "reflect-metadata@npm:0.1.13"
   checksum: 798d379a7b6f6455501145419505c97dd11cbc23857a386add2b9ef15963ccf15a48d9d15507afe01d4cd74116df8a213247200bac00320bd7c11ddeaa5e8fb4
+  languageName: node
+  linkType: hard
+
+"reflect-metadata@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "reflect-metadata@npm:0.2.1"
+  checksum: 772f552a544e04b999c1bf2c868225fef10032274e9d9e315bc3e7a687a504b8b115fa71966665b9619acfd323123a941f892b593250140da809330d41564181
   languageName: node
   linkType: hard
 
