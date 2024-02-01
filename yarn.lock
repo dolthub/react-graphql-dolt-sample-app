@@ -1948,9 +1948,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^10.2.10":
-  version: 10.2.10
-  resolution: "@nestjs/common@npm:10.2.10"
+"@nestjs/common@npm:^10.3.1":
+  version: 10.3.1
+  resolution: "@nestjs/common@npm:10.3.1"
   dependencies:
     iterare: 1.2.1
     tslib: 2.6.2
@@ -1965,7 +1965,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 120b55eaa06780461bf9ba96c7a753c373e63889120ad5fffe3337603748164bd0177a67dfd90c8421fd0ca18a3e0dfe49f12dd5a204cc33c8efb52072aa86b4
+  checksum: a9ab50ddc14703b48e3a05cea54efdf807c69523f34281e715b2db574941ff0aa0760e75b895ce414640bfc83d3804d83015fbc400bc3cd36fc222c59153861c
   languageName: node
   linkType: hard
 
@@ -2470,7 +2470,7 @@ __metadata:
     "@apollo/server": ^4.9.5
     "@nestjs/apollo": ^12.0.11
     "@nestjs/cli": ^10.2.1
-    "@nestjs/common": ^10.2.10
+    "@nestjs/common": ^10.3.1
     "@nestjs/config": ^3.1.1
     "@nestjs/core": ^10.3.0
     "@nestjs/graphql": ^12.0.11
