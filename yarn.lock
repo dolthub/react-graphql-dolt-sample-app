@@ -2498,7 +2498,7 @@ __metadata:
     "@graphql-codegen/typescript-operations": ^4.0.1
     "@graphql-codegen/typescript-react-apollo": ^4.1.0
     "@react-icons/all-files": ^4.1.0
-    "@types/react": ^18.2.46
+    "@types/react": ^18.2.51
     "@types/react-loader": ^2.4.8
     "@types/react-timeago": ^4.1.6
     eslint: 8.54.0
