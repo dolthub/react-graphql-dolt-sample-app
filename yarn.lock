@@ -2276,18 +2276,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:^10.0.1":
-  version: 10.0.1
-  resolution: "@nestjs/typeorm@npm:10.0.1"
+"@nestjs/typeorm@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "@nestjs/typeorm@npm:10.0.2"
   dependencies:
     uuid: 9.0.1
   peerDependencies:
     "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
     "@nestjs/core": ^8.0.0 || ^9.0.0 || ^10.0.0
-    reflect-metadata: ^0.1.13
+    reflect-metadata: ^0.1.13 || ^0.2.0
     rxjs: ^7.2.0
     typeorm: ^0.3.0
-  checksum: 6055169a0f8dabff325586c0da5de99c18c49d1d35f702a3ebece40ffc7084b397af7dd31d1724a4b1d11e5d1fc38ef320a5ed5062e01727d6143ae39ed61120
+  checksum: 391662a69f48337e71f9e42f4c9d421a7059911cf15c92fa40cbd81bdbc467b917c0f97702035e2e69fac30f3e12460e48f763c2114809c231c7de0ab441e2d8
   languageName: node
   linkType: hard
 
@@ -2583,7 +2583,7 @@ __metadata:
     "@nestjs/platform-express": ^10.3.3
     "@nestjs/schematics": ^10.0.3
     "@nestjs/terminus": ^10.2.3
-    "@nestjs/typeorm": ^10.0.1
+    "@nestjs/typeorm": ^10.0.2
     cors: ^2.8.5
     graphql: ^16.8.1
     mysql2: ^3.9.1
