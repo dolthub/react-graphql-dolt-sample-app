@@ -1276,9 +1276,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript-react-apollo@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@graphql-codegen/typescript-react-apollo@npm:4.1.0"
+"@graphql-codegen/typescript-react-apollo@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "@graphql-codegen/typescript-react-apollo@npm:4.3.0"
   dependencies:
     "@graphql-codegen/plugin-helpers": ^3.0.0
     "@graphql-codegen/visitor-plugin-common": 2.13.1
@@ -1288,7 +1288,7 @@ __metadata:
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     graphql-tag: ^2.0.0
-  checksum: b002f409f9d3057621fa94bdf8941439505ada10f95a5c5d7fd3c15e077e5f30ce08a1478b305afb076826030de6d3320622ff7f1f7651307af852ca1b9b9d23
+  checksum: 49ad7592d1447e3b613cb0080d2d378192ef5aad2ccfcced1d9e36d8025ba2e4bf273b8334f75ba3baa2f2afd34362ee6cd9f9096eb7c8f1b849a1f602822ea5
   languageName: node
   linkType: hard
 
@@ -2538,7 +2538,7 @@ __metadata:
     "@graphql-codegen/introspection": ^4.0.0
     "@graphql-codegen/typescript": ^4.0.1
     "@graphql-codegen/typescript-operations": ^4.0.1
-    "@graphql-codegen/typescript-react-apollo": ^4.1.0
+    "@graphql-codegen/typescript-react-apollo": ^4.3.0
     "@react-icons/all-files": ^4.1.0
     "@types/react": ^18.2.51
     "@types/react-loader": ^2.4.8
