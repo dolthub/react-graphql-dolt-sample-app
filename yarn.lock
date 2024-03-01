@@ -2157,9 +2157,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:^10.2.1":
-  version: 10.2.1
-  resolution: "@nestjs/terminus@npm:10.2.1"
+"@nestjs/terminus@npm:^10.2.3":
+  version: 10.2.3
+  resolution: "@nestjs/terminus@npm:10.2.3"
   dependencies:
     boxen: 5.1.2
     check-disk-space: 3.4.0
@@ -2177,7 +2177,7 @@ __metadata:
     "@nestjs/typeorm": ^9.0.0 || ^10.0.0
     "@prisma/client": "*"
     mongoose: "*"
-    reflect-metadata: 0.1.x
+    reflect-metadata: 0.1.x || 0.2.x
     rxjs: 7.x
     sequelize: "*"
     typeorm: "*"
@@ -2208,7 +2208,7 @@ __metadata:
       optional: true
     typeorm:
       optional: true
-  checksum: 62edf76cf99305681e3ca3b1546561621a916fcaca0a0c16ce86db9cecf512cec0e4bddaf084904269fae3bae466112e7a653829d8a7415b4202fa61b078c11d
+  checksum: 7a758c845c0a07a75230731d3b638919aae0b503b6cef97fa7f63d4cd23c6c6db0e8d39d5ecf4d8fda6e3f0aa7d4aa95fddcf5868758cf85d201db6acc43ac9d
   languageName: node
   linkType: hard
 
@@ -2518,7 +2518,7 @@ __metadata:
     "@nestjs/graphql": ^12.0.11
     "@nestjs/platform-express": ^10.3.0
     "@nestjs/schematics": ^10.0.3
-    "@nestjs/terminus": ^10.2.1
+    "@nestjs/terminus": ^10.2.3
     "@nestjs/typeorm": ^10.0.1
     cors: ^2.8.5
     graphql: ^16.8.1
