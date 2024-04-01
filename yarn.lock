@@ -2765,7 +2765,7 @@ __metadata:
     "@react-icons/all-files": ^4.1.0
     "@types/react": ^18.2.73
     "@types/react-loader": ^2.4.8
-    "@types/react-timeago": ^4.1.6
+    "@types/react-timeago": ^4.1.7
     eslint: 8.57.0
     eslint-config-next: 14.0.3
     isomorphic-unfetch: ^4.0.2
@@ -2975,12 +2975,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-timeago@npm:^4.1.6":
-  version: 4.1.6
-  resolution: "@types/react-timeago@npm:4.1.6"
+"@types/react-timeago@npm:^4.1.7":
+  version: 4.1.7
+  resolution: "@types/react-timeago@npm:4.1.7"
   dependencies:
     "@types/react": "*"
-  checksum: 97b7d2b54339b5badd6056547bc8769ba62a9cad8716e667489bb120cb191a6dd37be7e9be549162229c6e174947e945497b918e84c6b3089b97a63cc3240c95
+  checksum: d69d47385a8f422c7ad16dadce1bcf2ea471324d36869d4b0d412f26e10311688fd5a0bad3e3963b427c2ba5c60f42671f5fb6582eb73dba25867b6246b9ca2c
   languageName: node
   linkType: hard
 
