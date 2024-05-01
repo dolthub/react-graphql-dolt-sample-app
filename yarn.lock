@@ -2337,9 +2337,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/config@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@nestjs/config@npm:3.2.1"
+"@nestjs/config@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "@nestjs/config@npm:3.2.2"
   dependencies:
     dotenv: 16.4.5
     dotenv-expand: 10.0.0
@@ -2348,7 +2348,7 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
     rxjs: ^7.1.0
-  checksum: 396e314c7181ade2c2c36d1505a80b746eafaef4a03b8c0c8f38dfdae6d6258e3cf4ad02c875f522e3989819914d4f02d45169fb87d4af2a47cd3abc7c9e56ea
+  checksum: 1f677ff4ea13dc7d9c27e094965101ea661dd1ec362aed8f188413037dac21c08f71967add551cad5a3d21301c66d4c61815ed709bf101afaa0fd0aa0f4bf14c
   languageName: node
   linkType: hard
 
@@ -2839,7 +2839,7 @@ __metadata:
     "@nestjs/apollo": ^12.0.11
     "@nestjs/cli": ^10.3.0
     "@nestjs/common": ^10.3.7
-    "@nestjs/config": ^3.2.1
+    "@nestjs/config": ^3.2.2
     "@nestjs/core": ^10.3.7
     "@nestjs/graphql": ^12.1.1
     "@nestjs/platform-express": ^10.3.3
