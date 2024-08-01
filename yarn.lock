@@ -2845,7 +2845,7 @@ __metadata:
     "@nestjs/typeorm": ^10.0.2
     cors: ^2.8.5
     graphql: ^16.9.0
-    mysql2: ^3.10.2
+    mysql2: ^3.11.0
     reflect-metadata: ^0.2.2
     typeorm: ^0.3.20
     typescript: ^5.4.5
@@ -3977,6 +3977,13 @@ __metadata:
   version: 1.0.5
   resolution: "available-typed-arrays@npm:1.0.5"
   checksum: 20eb47b3cefd7db027b9bbb993c658abd36d4edd3fe1060e83699a03ee275b0c9b216cc076ff3f2db29073225fb70e7613987af14269ac1fe2a19803ccc97f1a
+  languageName: node
+  linkType: hard
+
+"aws-ssl-profiles@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "aws-ssl-profiles@npm:1.1.1"
+  checksum: c428ee04614bca4a22e5b4d0fd31181f9ba901206c4f614c08ae3b05333c06f1a99964082dcf2f1b119b3a7b07de9c35d2876c7b96eaa41d680c6eac9bc9443e
   languageName: node
   linkType: hard
 
@@ -8416,10 +8423,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mysql2@npm:^3.10.2":
-  version: 3.10.2
-  resolution: "mysql2@npm:3.10.2"
+"mysql2@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "mysql2@npm:3.11.0"
   dependencies:
+    aws-ssl-profiles: ^1.1.1
     denque: ^2.1.0
     generate-function: ^2.3.1
     iconv-lite: ^0.6.3
@@ -8428,7 +8436,7 @@ __metadata:
     named-placeholders: ^1.1.3
     seq-queue: ^0.0.5
     sqlstring: ^2.3.2
-  checksum: 1fc10bc85e172f7b24d7a72a0cd82aeb9af867724e07eeefb20a15c9f63cc8f64cfff09b63f63afac585205928c1d78c20aeec87223edc851725de9273b0b2a7
+  checksum: 0a3e80c95ca9e26821bc11658cbd065704d5f07f76efd952fc84115cc28f8a0100f14646fb3dd577f28831b8d6d2bfe0ef46fd4273ba5dcbfbeabb311302874d
   languageName: node
   linkType: hard
 
