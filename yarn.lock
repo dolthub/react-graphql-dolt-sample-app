@@ -1512,6 +1512,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/typescript@npm:^4.0.9":
+  version: 4.0.9
+  resolution: "@graphql-codegen/typescript@npm:4.0.9"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^5.0.4
+    "@graphql-codegen/schema-ast": ^4.0.2
+    "@graphql-codegen/visitor-plugin-common": 5.3.1
+    auto-bind: ~4.0.0
+    tslib: ~2.6.0
+  peerDependencies:
+    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 843081bc484d209658158fcc5eabf5b4d2e2edc860686d656d16ddd76bf585a7d060438cf5ae4c9f69bf75c6be641c1a822095b0d5e9fc77cd94a9b11e517939
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/visitor-plugin-common@npm:2.13.1":
   version: 2.13.1
   resolution: "@graphql-codegen/visitor-plugin-common@npm:2.13.1"
@@ -1569,6 +1584,26 @@ __metadata:
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: 401b95058d61e840379b0f77f89f1f4c1a63a67cf4958d34dda46a695cd86ec1ce5c2ea2711e71b56ece016892d7b07fb3221bf690f1e9ac1ba3c4fa8110a5cf
+  languageName: node
+  linkType: hard
+
+"@graphql-codegen/visitor-plugin-common@npm:5.3.1":
+  version: 5.3.1
+  resolution: "@graphql-codegen/visitor-plugin-common@npm:5.3.1"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^5.0.4
+    "@graphql-tools/optimize": ^2.0.0
+    "@graphql-tools/relay-operation-optimizer": ^7.0.0
+    "@graphql-tools/utils": ^10.0.0
+    auto-bind: ~4.0.0
+    change-case-all: 1.0.15
+    dependency-graph: ^0.11.0
+    graphql-tag: ^2.11.0
+    parse-filepath: ^1.0.2
+    tslib: ~2.6.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 273f99a91233b0f68988185498f9170a0b46a311d65b57029e0e2bd03d72d7c90bb3b1f5e49233fee459a770119f7d0674dd01306b2cc1ddb27d30f940fb1f98
   languageName: node
   linkType: hard
 
@@ -2859,7 +2894,7 @@ __metadata:
     "@apollo/client": ^3.10.8
     "@graphql-codegen/cli": ^5.0.2
     "@graphql-codegen/introspection": ^4.0.3
-    "@graphql-codegen/typescript": ^4.0.8
+    "@graphql-codegen/typescript": ^4.0.9
     "@graphql-codegen/typescript-operations": ^4.2.2
     "@graphql-codegen/typescript-react-apollo": ^4.3.0
     "@react-icons/all-files": ^4.1.0
