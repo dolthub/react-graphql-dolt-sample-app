@@ -2346,15 +2346,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^10.4.1":
-  version: 10.4.1
-  resolution: "@nestjs/core@npm:10.4.1"
+"@nestjs/core@npm:^10.4.4":
+  version: 10.4.4
+  resolution: "@nestjs/core@npm:10.4.4"
   dependencies:
     "@nuxtjs/opencollective": 0.3.2
     fast-safe-stringify: 2.1.1
     iterare: 1.2.1
-    path-to-regexp: 3.2.0
-    tslib: 2.6.3
+    path-to-regexp: 3.3.0
+    tslib: 2.7.0
     uid: 2.0.2
   peerDependencies:
     "@nestjs/common": ^10.0.0
@@ -2370,7 +2370,7 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 118613da007e92c66578119b945b148d0fc23cfe34a78cdfaa61d8ac97e8f594f5cf55572ad05f428e8cac9ae3e25a980d58996540dbdeb7bb7adedf09ff43c5
+  checksum: a2520dd801be2954e8f4e1e0bb5da6bf68a411f1ea39c225bd616e0fc975d6a84f59b05f34b3a5508ce295dabb35cb6d309c59e685484aae5c90c0eb6e769c51
   languageName: node
   linkType: hard
 
@@ -2834,7 +2834,7 @@ __metadata:
     "@nestjs/cli": ^10.4.5
     "@nestjs/common": ^10.4.1
     "@nestjs/config": ^3.2.3
-    "@nestjs/core": ^10.4.1
+    "@nestjs/core": ^10.4.4
     "@nestjs/graphql": ^12.2.0
     "@nestjs/platform-express": ^10.4.4
     "@nestjs/schematics": ^10.1.4
@@ -9293,10 +9293,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:3.2.0":
-  version: 3.2.0
-  resolution: "path-to-regexp@npm:3.2.0"
-  checksum: c3d35cda3b26d9e604d789b9a1764bb9845f53ca8009d5809356b4677a3c064b0f01117a05a5b4b77bafd5ae002a82592e3f3495e885c22961f8b1dab8bd6ae7
+"path-to-regexp@npm:3.3.0":
+  version: 3.3.0
+  resolution: "path-to-regexp@npm:3.3.0"
+  checksum: bb249d08804f7961dd44fb175466c900b893c56e909db8e2a66ec12b9d9a964af269eb7a50892c933f52b47315953dfdb4279639fbce20977c3625a9ef3055fe
   languageName: node
   linkType: hard
 
