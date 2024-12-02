@@ -2495,19 +2495,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^10.4.6":
-  version: 10.4.6
-  resolution: "@nestjs/platform-express@npm:10.4.6"
+"@nestjs/platform-express@npm:^10.4.12":
+  version: 10.4.12
+  resolution: "@nestjs/platform-express@npm:10.4.12"
   dependencies:
     body-parser: 1.20.3
     cors: 2.8.5
     express: 4.21.1
     multer: 1.4.4-lts.1
-    tslib: 2.7.0
+    tslib: 2.8.1
   peerDependencies:
     "@nestjs/common": ^10.0.0
     "@nestjs/core": ^10.0.0
-  checksum: 64714543715c02b13e799cbd72fab02bd103bb57607aa544302d1dafdbbf2eec0f37a9d8d6556c55ddfe54017d3852113776ffd4abf796d560010049a67c57b4
+  checksum: 4cfd3716c086ee600f7d2f9f30579695a362b0d1af1529de3592d5c1926b011b700f366d6dc5f9209741e15d81b842ece8117eb7c7bd401020d15ba10f7ecad8
   languageName: node
   linkType: hard
 
@@ -2874,7 +2874,7 @@ __metadata:
     "@nestjs/config": ^3.3.0
     "@nestjs/core": ^10.4.12
     "@nestjs/graphql": ^12.2.1
-    "@nestjs/platform-express": ^10.4.6
+    "@nestjs/platform-express": ^10.4.12
     "@nestjs/schematics": ^10.2.3
     "@nestjs/terminus": ^10.2.3
     "@nestjs/typeorm": ^10.0.2
@@ -11249,20 +11249,6 @@ __metadata:
     minimist: ^1.2.6
     strip-bom: ^3.0.0
   checksum: 59f35407a390d9482b320451f52a411a256a130ff0e7543d18c6f20afab29ac19fbe55c360a93d6476213cc335a4d76ce90f67df54c4e9037f7d240920832201
-  languageName: node
-  linkType: hard
-
-"tslib@npm:2.6.3":
-  version: 2.6.3
-  resolution: "tslib@npm:2.6.3"
-  checksum: 74fce0e100f1ebd95b8995fbbd0e6c91bdd8f4c35c00d4da62e285a3363aaa534de40a80db30ecfd388ed7c313c42d930ee0eaf108e8114214b180eec3dbe6f5
-  languageName: node
-  linkType: hard
-
-"tslib@npm:2.7.0":
-  version: 2.7.0
-  resolution: "tslib@npm:2.7.0"
-  checksum: 1606d5c89f88d466889def78653f3aab0f88692e80bb2066d090ca6112ae250ec1cfa9dbfaab0d17b60da15a4186e8ec4d893801c67896b277c17374e36e1d28
   languageName: node
   linkType: hard
 
