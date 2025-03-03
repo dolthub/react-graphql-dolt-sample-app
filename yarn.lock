@@ -228,14 +228,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/server@npm:^4.11.2":
-  version: 4.11.2
-  resolution: "@apollo/server@npm:4.11.2"
+"@apollo/server@npm:^4.11.3":
+  version: 4.11.3
+  resolution: "@apollo/server@npm:4.11.3"
   dependencies:
     "@apollo/cache-control-types": ^1.0.3
     "@apollo/server-gateway-interface": ^1.1.1
     "@apollo/usage-reporting-protobuf": ^4.1.1
-    "@apollo/utils.createhash": ^2.0.0
+    "@apollo/utils.createhash": ^2.0.2
     "@apollo/utils.fetcher": ^2.0.0
     "@apollo/utils.isnodelike": ^2.0.0
     "@apollo/utils.keyvaluecache": ^2.1.0
@@ -258,7 +258,7 @@ __metadata:
     whatwg-mimetype: ^3.0.0
   peerDependencies:
     graphql: ^16.6.0
-  checksum: 09cf7d8b720cc136d27dc080aa3b389fa446d87c46cfece9e1ec39d559928700db674bf30c99142701fd2a59a09ad5a35a1058d4a595cff3a6ef7282cac4dc06
+  checksum: c7052c82f8b04b44ddd2ac2d46547f72758dc3a110fca40b886ca46296642f45d53dcd8132e1402a656779037fdb409d3b05272dbbf9c9bed1b1512fa3c2cd63
   languageName: node
   linkType: hard
 
@@ -271,13 +271,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/utils.createhash@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "@apollo/utils.createhash@npm:2.0.1"
+"@apollo/utils.createhash@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@apollo/utils.createhash@npm:2.0.2"
   dependencies:
     "@apollo/utils.isnodelike": ^2.0.1
     sha.js: ^2.4.11
-  checksum: 63608cbd5bfff314aa998bea077c55d941fee80f92dd01cf4fc8e3b83e62ea8d6dffc88281e79732cbdb6e8e374310a994f1b4e2389bf959d1c5eee7453dd192
+  checksum: a4d819b0e2d574422b05d4f1786723d971daf533207f6825339db728f60e69b7ffccc38e08f878c16f3a43a71ea18173ceb31ffdaad581187a72b91e3a87e16b
   languageName: node
   linkType: hard
 
@@ -3121,7 +3121,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sample/graphql-server@workspace:packages/graphql-server"
   dependencies:
-    "@apollo/server": ^4.11.2
+    "@apollo/server": ^4.11.3
     "@nestjs/apollo": ^13.0.3
     "@nestjs/cli": ^11.0.5
     "@nestjs/common": ^11.0.11
