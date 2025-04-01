@@ -22,7 +22,7 @@
     "@nestjs/core": "^11.0.11",
     "@nestjs/graphql": "^13.0.4",
     "@nestjs/platform-express": "^11.0.7",
-    "@nestjs/schematics": "^10.2.3",
+    "@nestjs/schematics": "^11.0.2",
     "@nestjs/terminus": "^10.2.3",
     "@nestjs/typeorm": "^11.0.0",
     "cors": "^2.8.5",
