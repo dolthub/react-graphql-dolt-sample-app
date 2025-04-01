@@ -2625,17 +2625,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/config@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "@nestjs/config@npm:3.3.0"
+"@nestjs/config@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@nestjs/config@npm:4.0.2"
   dependencies:
-    dotenv: 16.4.5
-    dotenv-expand: 10.0.0
+    dotenv: 16.4.7
+    dotenv-expand: 12.0.1
     lodash: 4.17.21
   peerDependencies:
-    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
+    "@nestjs/common": ^10.0.0 || ^11.0.0
     rxjs: ^7.1.0
-  checksum: 2f1492694662ddbdca8bafeb8fb864f636a7aff477051707abc6e96f2cc5648ef3fbdeb6d4e8fc8b936725ac072accb212595b6395f640123813f9394e3aea95
+  checksum: 96fd110eeae123673150b76b9009a49dcebd6a80931dccdb5c5e547f02622a76b33d3d17385f3433c451caf94a3bdf771d80633662a1d021f60827016aa39e79
   languageName: node
   linkType: hard
 
@@ -3095,7 +3095,7 @@ __metadata:
     "@nestjs/apollo": ^13.0.3
     "@nestjs/cli": ^11.0.5
     "@nestjs/common": ^11.0.11
-    "@nestjs/config": ^3.3.0
+    "@nestjs/config": ^4.0.2
     "@nestjs/core": ^11.0.11
     "@nestjs/graphql": ^13.0.4
     "@nestjs/platform-express": ^11.0.7
@@ -5783,17 +5783,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-expand@npm:10.0.0":
-  version: 10.0.0
-  resolution: "dotenv-expand@npm:10.0.0"
-  checksum: 2a38b470efe0abcb1ac8490421a55e1d764dc9440fd220942bce40965074f3fb00b585f4346020cb0f0f219966ee6b4ee5023458b3e2953fe5b3214de1b314ee
+"dotenv-expand@npm:12.0.1":
+  version: 12.0.1
+  resolution: "dotenv-expand@npm:12.0.1"
+  dependencies:
+    dotenv: ^16.4.5
+  checksum: 05d75f192c751d3345275db21b0491f43b6089ae1fe7cd5dd67d98469f2723d762d113e058e26a70101cf8003bfb0df0ef695a784c86e53ac38bf046bb9b593d
   languageName: node
   linkType: hard
 
-"dotenv@npm:16.4.5":
-  version: 16.4.5
-  resolution: "dotenv@npm:16.4.5"
-  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
+"dotenv@npm:16.4.7, dotenv@npm:^16.4.5":
+  version: 16.4.7
+  resolution: "dotenv@npm:16.4.7"
+  checksum: c27419b5875a44addcc56cc69b7dc5b0e6587826ca85d5b355da9303c6fc317fc9989f1f18366a16378c9fdd9532d14117a1abe6029cc719cdbbef6eaef2cea4
   languageName: node
   linkType: hard
 
