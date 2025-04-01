@@ -20,7 +20,7 @@
     "react-dom": "^18.3.1",
     "react-loader": "^2.4.7",
     "react-timeago": "^7.2.0",
-    "swr": "^2.3.2"
+    "swr": "^2.3.3"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.4",
