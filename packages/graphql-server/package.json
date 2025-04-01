@@ -20,7 +20,7 @@
     "@nestjs/common": "^11.0.11",
     "@nestjs/config": "^3.3.0",
     "@nestjs/core": "^11.0.11",
-    "@nestjs/graphql": "^12.2.1",
+    "@nestjs/graphql": "^13.0.4",
     "@nestjs/platform-express": "^11.0.7",
     "@nestjs/schematics": "^10.2.3",
     "@nestjs/terminus": "^10.2.3",
