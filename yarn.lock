@@ -1222,9 +1222,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/cli@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@graphql-codegen/cli@npm:5.0.4"
+"@graphql-codegen/cli@npm:^5.0.5":
+  version: 5.0.5
+  resolution: "@graphql-codegen/cli@npm:5.0.5"
   dependencies:
     "@babel/generator": ^7.18.13
     "@babel/template": ^7.18.10
@@ -1272,7 +1272,7 @@ __metadata:
     graphql-code-generator: cjs/bin.js
     graphql-codegen: cjs/bin.js
     graphql-codegen-esm: esm/bin.js
-  checksum: e38cbe36238d386512cc45cd2e08d5c00ee264b7b0fa21d188e2fcf12cfd37f4b97b13cf14c0bde3754cb08e69a8225107e9a9d982485dd503c309d9249855f1
+  checksum: f3ff651b52878da37ff131605600391ff09ff5614b2c17dace14d4c36c16de0e9331b3acbae3631ff97f038483a224f3ba9f4c1631e27d02e9dc01f26960926b
   languageName: node
   linkType: hard
 
@@ -3069,7 +3069,7 @@ __metadata:
   resolution: "@sample/web@workspace:packages/web"
   dependencies:
     "@apollo/client": ^3.13.5
-    "@graphql-codegen/cli": ^5.0.4
+    "@graphql-codegen/cli": ^5.0.5
     "@graphql-codegen/introspection": ^4.0.3
     "@graphql-codegen/typescript": ^4.1.5
     "@graphql-codegen/typescript-operations": ^4.4.0
