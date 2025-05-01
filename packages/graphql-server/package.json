@@ -19,7 +19,7 @@
     "@nestjs/cli": "^11.0.5",
     "@nestjs/common": "^11.0.11",
     "@nestjs/config": "^4.0.2",
-    "@nestjs/core": "^11.0.11",
+    "@nestjs/core": "^11.1.0",
     "@nestjs/graphql": "^13.1.0",
     "@nestjs/platform-express": "^11.0.7",
     "@nestjs/schematics": "^11.0.5",
