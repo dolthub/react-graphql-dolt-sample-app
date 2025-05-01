@@ -2667,9 +2667,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/graphql@npm:^13.0.4":
-  version: 13.0.4
-  resolution: "@nestjs/graphql@npm:13.0.4"
+"@nestjs/graphql@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "@nestjs/graphql@npm:13.1.0"
   dependencies:
     "@graphql-tools/merge": 9.0.24
     "@graphql-tools/schema": 10.0.23
@@ -2702,7 +2702,7 @@ __metadata:
       optional: true
     ts-morph:
       optional: true
-  checksum: 8b1f14225a663c30556d66259eb95efaaad5b90b52e54f847d8aa78d90d3c39613c2436a808c2716cee61b6c44336cbb3294ab2ead146689a0fc59f122951392
+  checksum: 533613667d7aab8f8bdec6ac135300c8b6460a09f025052abf366fd8146950311ade967b1b08d315673d88991b2dec45a20ec63b929e0e43f4023df902b172e4
   languageName: node
   linkType: hard
 
@@ -3097,7 +3097,7 @@ __metadata:
     "@nestjs/common": ^11.0.11
     "@nestjs/config": ^4.0.2
     "@nestjs/core": ^11.0.11
-    "@nestjs/graphql": ^13.0.4
+    "@nestjs/graphql": ^13.1.0
     "@nestjs/platform-express": ^11.0.7
     "@nestjs/schematics": ^11.0.5
     "@nestjs/terminus": ^10.2.3
