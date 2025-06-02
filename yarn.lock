@@ -3302,7 +3302,7 @@ __metadata:
     graphql: ^16.11.0
     mysql2: ^3.12.0
     reflect-metadata: ^0.2.2
-    typeorm: ^0.3.22
+    typeorm: ^0.3.24
     typescript: ^5.8.2
   languageName: unknown
   linkType: soft
@@ -5615,6 +5615,18 @@ __metadata:
   version: 1.2.0
   resolution: "decamelize@npm:1.2.0"
   checksum: ad8c51a7e7e0720c70ec2eeb1163b66da03e7616d7b98c9ef43cce2416395e84c1e9548dd94f5f6ffecfee9f8b94251fc57121a8b021f2ff2469b2bae247b8aa
+  languageName: node
+  linkType: hard
+
+"dedent@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "dedent@npm:1.6.0"
+  peerDependencies:
+    babel-plugin-macros: ^3.1.0
+  peerDependenciesMeta:
+    babel-plugin-macros:
+      optional: true
+  checksum: ecaa83968b3db4ffeadf8f679c01280f8679ec79993d7e203c0281d7926e883bb79f42b263ba0df1f78e146e4b0be1b9a5b922b1fe040cb89b09977bc9c25b38
   languageName: node
   linkType: hard
 
@@ -12088,9 +12100,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typeorm@npm:^0.3.22":
-  version: 0.3.22
-  resolution: "typeorm@npm:0.3.22"
+"typeorm@npm:^0.3.24":
+  version: 0.3.24
+  resolution: "typeorm@npm:0.3.24"
   dependencies:
     "@sqltools/formatter": ^1.2.5
     ansis: ^3.17.0
@@ -12098,6 +12110,7 @@ __metadata:
     buffer: ^6.0.3
     dayjs: ^1.11.13
     debug: ^4.4.0
+    dedent: ^1.6.0
     dotenv: ^16.4.7
     glob: ^10.4.5
     sha.js: ^2.4.11
@@ -12163,7 +12176,7 @@ __metadata:
     typeorm: cli.js
     typeorm-ts-node-commonjs: cli-ts-node-commonjs.js
     typeorm-ts-node-esm: cli-ts-node-esm.js
-  checksum: 2480897bdcf899c0c06aee78a470dfbaca3f2ea7e7ac961a887d14d25d75c8f8d1e0dc43fdb96e1f412c4c17f6f7021e47b0bee71141bac354a3514a417a1770
+  checksum: 9d93e34bd4468b281492c4a46bc2d5cdf32212e819375326df39ffea9a817a021e86cadc74664ce4c846415ec34102842e552891465eb7c2eb75ea7af893d503
   languageName: node
   linkType: hard
 
