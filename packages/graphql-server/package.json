@@ -21,7 +21,7 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.0",
     "@nestjs/graphql": "^13.1.0",
-    "@nestjs/platform-express": "^11.0.7",
+    "@nestjs/platform-express": "^11.1.2",
     "@nestjs/schematics": "^11.0.5",
     "@nestjs/terminus": "^10.2.3",
     "@nestjs/typeorm": "^11.0.0",
