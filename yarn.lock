@@ -3214,7 +3214,7 @@ __metadata:
     graphql: ^16.11.0
     mysql2: ^3.12.0
     reflect-metadata: ^0.2.2
-    typeorm: ^0.3.24
+    typeorm: ^0.3.25
     typescript: ^5.8.3
   languageName: unknown
   linkType: soft
@@ -12036,9 +12036,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typeorm@npm:^0.3.24":
-  version: 0.3.24
-  resolution: "typeorm@npm:0.3.24"
+"typeorm@npm:^0.3.25":
+  version: 0.3.25
+  resolution: "typeorm@npm:0.3.25"
   dependencies:
     "@sqltools/formatter": ^1.2.5
     ansis: ^3.17.0
@@ -12112,7 +12112,7 @@ __metadata:
     typeorm: cli.js
     typeorm-ts-node-commonjs: cli-ts-node-commonjs.js
     typeorm-ts-node-esm: cli-ts-node-esm.js
-  checksum: 9d93e34bd4468b281492c4a46bc2d5cdf32212e819375326df39ffea9a817a021e86cadc74664ce4c846415ec34102842e552891465eb7c2eb75ea7af893d503
+  checksum: fc620980f0eaab276f25d558544561bab305bd2ec8de195d9a36e539ff994cc56a1263025ca0f8863cc41e6a37af389ee9f866fe55cbd8acc85b65f2f7b7a1fb
   languageName: node
   linkType: hard
 
