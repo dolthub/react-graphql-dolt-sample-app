@@ -29,7 +29,7 @@
     "graphql": "^16.11.0",
     "mysql2": "^3.14.1",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.24"
+    "typeorm": "^0.3.25"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
