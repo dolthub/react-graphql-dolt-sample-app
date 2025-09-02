@@ -3242,7 +3242,7 @@ __metadata:
     react: ^18.3.1
     react-dom: ^18.3.1
     react-loader: ^2.4.7
-    react-timeago: ^8.0.0
+    react-timeago: ^8.3.0
     swr: ^2.3.4
     typescript: ^5.9.2
   languageName: unknown
@@ -9898,12 +9898,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-timeago@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "react-timeago@npm:8.0.0"
+"react-timeago@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "react-timeago@npm:8.3.0"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 82c36c8f093509b8d1bb69f1b49fd6d8c70964e0589b420ead1b9e6a647d71dfc572cabb9cd2e3a6f9ea913fed061c38da7e99c1453ebdc660918a3c0759c259
+  checksum: 7e8809f45a8374886faa39151e7fb67bacf3b25cd5c1559e69e860d273f72feb2857b8c0fcc51efbdef390cb5ec4804bc0e255112743c94d9f19fa5c2ea66662
   languageName: node
   linkType: hard
 
