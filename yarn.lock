@@ -2656,9 +2656,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/apollo@npm:^13.1.0":
-  version: 13.1.0
-  resolution: "@nestjs/apollo@npm:13.1.0"
+"@nestjs/apollo@npm:^13.2.0":
+  version: 13.2.0
+  resolution: "@nestjs/apollo@npm:13.2.0"
   dependencies:
     "@apollo/server-plugin-landing-page-graphql-playground": 4.0.1
     iterall: 1.3.0
@@ -2666,9 +2666,9 @@ __metadata:
     tslib: 2.8.1
   peerDependencies:
     "@apollo/gateway": ^2.0.0
-    "@apollo/server": ^4.11.3
+    "@apollo/server": ^5.0.0
     "@apollo/subgraph": ^2.0.0
-    "@as-integrations/fastify": ^2.1.1
+    "@as-integrations/fastify": ^2.1.1 || ^3.0.0
     "@nestjs/common": ^11.0.1
     "@nestjs/core": ^11.0.1
     "@nestjs/graphql": ^13.0.0
@@ -2678,9 +2678,11 @@ __metadata:
       optional: true
     "@apollo/subgraph":
       optional: true
+    "@as-integrations/express5":
+      optional: true
     "@as-integrations/fastify":
       optional: true
-  checksum: 8173d4579afd7322dab97a26f63ab85b8ae12ef6f9bee5e179361f9a57816e48a052e856d9d59b9b4b4da7f860d4bc0392ac6a693823a395bf5c9601d4dfaf61
+  checksum: a97a1beed8b6992f01df1914f8e27aedfe99804b5078669d71500ce9b6a1776b1d4020226e0f230c0aa4a9787bd4e20acf903c750999d4f55268ab85f4459bc8
   languageName: node
   linkType: hard
 
@@ -3202,7 +3204,7 @@ __metadata:
   resolution: "@sample/graphql-server@workspace:packages/graphql-server"
   dependencies:
     "@apollo/server": ^5.0.0
-    "@nestjs/apollo": ^13.1.0
+    "@nestjs/apollo": ^13.2.0
     "@nestjs/cli": ^11.0.10
     "@nestjs/common": ^11.1.6
     "@nestjs/config": ^4.0.2
