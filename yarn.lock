@@ -1360,16 +1360,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/introspection@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "@graphql-codegen/introspection@npm:4.0.3"
+"@graphql-codegen/introspection@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@graphql-codegen/introspection@npm:5.0.0"
   dependencies:
-    "@graphql-codegen/plugin-helpers": ^5.0.3
-    "@graphql-codegen/visitor-plugin-common": ^5.0.0
+    "@graphql-codegen/plugin-helpers": ^6.0.0
+    "@graphql-codegen/visitor-plugin-common": ^6.0.0
     tslib: ~2.6.0
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: aaca35a8673302912a65ac856adb57868beaabb520dfcc371ecd7fa699e15f83623738c63e02a6cdfef141f144a109220f75d3408d24c6e3e8eeaf587d19a1bf
+  checksum: 963050700d2e5ab83b7a0824b062a3dff0b686d383274a16cdef94bcc3d46090d420cad49f20763d26cefdf8d5a4332d388cf8fd949fa1b52e882fdc64ee90cb
   languageName: node
   linkType: hard
 
@@ -1434,6 +1434,22 @@ __metadata:
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: 9ba2ee4f616e04ee7edb5be7e9dfb45b0ad416ff3cabf36b9d3ece28e43925bbf3c8e7a2074ce0743c5f834054531739f288689278f06a938d3350e2c13a9a4e
+  languageName: node
+  linkType: hard
+
+"@graphql-codegen/plugin-helpers@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@graphql-codegen/plugin-helpers@npm:6.0.0"
+  dependencies:
+    "@graphql-tools/utils": ^10.0.0
+    change-case-all: 1.0.15
+    common-tags: 1.8.2
+    import-from: 4.0.0
+    lodash: ~4.17.0
+    tslib: ~2.6.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 00ed65051ffb348d0fc85700f39d6d642593a15c6694d459f7497073e6dcb847c623b1fccbec91f47428a8c0bcbe7e520b5c7907b7e385d47c812f3145e82c2b
   languageName: node
   linkType: hard
 
@@ -1554,23 +1570,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/visitor-plugin-common@npm:^5.0.0":
-  version: 5.1.0
-  resolution: "@graphql-codegen/visitor-plugin-common@npm:5.1.0"
+"@graphql-codegen/visitor-plugin-common@npm:^6.0.0":
+  version: 6.0.1
+  resolution: "@graphql-codegen/visitor-plugin-common@npm:6.0.1"
   dependencies:
-    "@graphql-codegen/plugin-helpers": ^5.0.3
+    "@graphql-codegen/plugin-helpers": ^6.0.0
     "@graphql-tools/optimize": ^2.0.0
     "@graphql-tools/relay-operation-optimizer": ^7.0.0
     "@graphql-tools/utils": ^10.0.0
     auto-bind: ~4.0.0
     change-case-all: 1.0.15
-    dependency-graph: ^0.11.0
+    dependency-graph: ^1.0.0
     graphql-tag: ^2.11.0
     parse-filepath: ^1.0.2
     tslib: ~2.6.0
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 7f187de6d4b0f6285e37e1bc8e72c0d158ca00c79eef4bbb7ae9c174790002ef144000acf85b406fbeef2f76f6792fc3ec7bb7ca0244ffaf791c67eaa2fe1f02
+  checksum: 3515b2281d2ec6397515ae0f16f7b37069f731877c14a23255bc7c7a3b507c54b9d099b120c1e1dc3c12ae44009966b0e8e9942af4bd76529aa1787b02836478
   languageName: node
   linkType: hard
 
@@ -3227,7 +3243,7 @@ __metadata:
   dependencies:
     "@apollo/client": ^3.13.5
     "@graphql-codegen/cli": ^5.0.7
-    "@graphql-codegen/introspection": ^4.0.3
+    "@graphql-codegen/introspection": ^5.0.0
     "@graphql-codegen/typescript": ^4.1.6
     "@graphql-codegen/typescript-operations": ^4.6.1
     "@graphql-codegen/typescript-react-apollo": ^4.3.3
@@ -5475,6 +5491,13 @@ __metadata:
   version: 0.11.0
   resolution: "dependency-graph@npm:0.11.0"
   checksum: 477204beaa9be69e642bc31ffe7a8c383d0cf48fa27acbc91c5df01431ab913e65c154213d2ef83d034c98d77280743ec85e5da018a97a18dd43d3c0b78b28cd
+  languageName: node
+  linkType: hard
+
+"dependency-graph@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "dependency-graph@npm:1.0.0"
+  checksum: c2e37c599877e5006020715686aa4f2c04746644124a0037f074873f5f9ccb3f2e8402393a280d52c26b9949deea0fbfeab3eb9e9839332dc7f37eede6c6f743
   languageName: node
   linkType: hard
 
