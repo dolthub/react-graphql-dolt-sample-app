@@ -60,25 +60,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:19.2.6":
-  version: 19.2.6
-  resolution: "@angular-devkit/core@npm:19.2.6"
-  dependencies:
-    ajv: 8.17.1
-    ajv-formats: 3.0.1
-    jsonc-parser: 3.3.1
-    picomatch: 4.0.2
-    rxjs: 7.8.1
-    source-map: 0.7.4
-  peerDependencies:
-    chokidar: ^4.0.0
-  peerDependenciesMeta:
-    chokidar:
-      optional: true
-  checksum: d1b8d4af7fe6584cdc08853d1b80e1ad810f8598655ec75c6212d920c1d18cc895efd4e3d45f0afea17ebc0c260485734fed9603e310c49fa7911dcb48c1cfed
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/schematics-cli@npm:19.2.15":
   version: 19.2.15
   resolution: "@angular-devkit/schematics-cli@npm:19.2.15"
@@ -118,19 +99,6 @@ __metadata:
     ora: 5.4.1
     rxjs: 7.8.1
   checksum: 7ca99d748b547f8415d58239639f90b0f28bff91ddfc01986e91b91504ca4fabaac882ec3ec6096f475938643954f361a7fefe71f60072cb94b8e97f8e972455
-  languageName: node
-  linkType: hard
-
-"@angular-devkit/schematics@npm:19.2.6":
-  version: 19.2.6
-  resolution: "@angular-devkit/schematics@npm:19.2.6"
-  dependencies:
-    "@angular-devkit/core": 19.2.6
-    jsonc-parser: 3.3.1
-    magic-string: 0.30.17
-    ora: 5.4.1
-    rxjs: 7.8.1
-  checksum: 3c90291853a00340e51a2d43f46bc632949651374d459f4be025c4bbd8adbb32ddf97e505137e12544471686a9d8f82b3495dad0b06784b5c2c993f4315762bc
   languageName: node
   linkType: hard
 
@@ -2976,18 +2944,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/schematics@npm:^11.0.5":
-  version: 11.0.5
-  resolution: "@nestjs/schematics@npm:11.0.5"
+"@nestjs/schematics@npm:^11.0.7":
+  version: 11.0.7
+  resolution: "@nestjs/schematics@npm:11.0.7"
   dependencies:
-    "@angular-devkit/core": 19.2.6
-    "@angular-devkit/schematics": 19.2.6
+    "@angular-devkit/core": 19.2.15
+    "@angular-devkit/schematics": 19.2.15
     comment-json: 4.2.5
     jsonc-parser: 3.3.1
     pluralize: 8.0.0
   peerDependencies:
     typescript: ">=4.8.2"
-  checksum: 7c49a8bcd0bc20a3c60aed73e7e8870977706aca88bcb4048b325c27ff70c0d506dfdab2dc0fc86ba79fb22a57c45e3ced07f890f0820cafe01253f18ef916ed
+  checksum: 976854d1cfa1c250e624c88f2125405bcc7fd7ffd0007f1db20ab7cc0c630da308a42668d1573356c7b78c9b401b0b15e786dafd2a042f64c41f4673f8f59c71
   languageName: node
   linkType: hard
 
@@ -3312,7 +3280,7 @@ __metadata:
     "@nestjs/core": ^11.1.6
     "@nestjs/graphql": ^13.2.0
     "@nestjs/platform-express": ^11.1.6
-    "@nestjs/schematics": ^11.0.5
+    "@nestjs/schematics": ^11.0.7
     "@nestjs/terminus": ^11.0.0
     "@nestjs/typeorm": ^11.0.0
     cors: ^2.8.5
