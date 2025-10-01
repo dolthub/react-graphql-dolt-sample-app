@@ -3234,7 +3234,7 @@ __metadata:
     "@react-icons/all-files": ^4.1.0
     "@types/react": ^18.3.12
     "@types/react-loader": ^2.4.8
-    "@types/react-timeago": ^4.1.7
+    "@types/react-timeago": ^8.0.0
     eslint: 8.57.0
     eslint-config-next: 15.5.2
     isomorphic-unfetch: ^4.0.2
@@ -3389,12 +3389,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-timeago@npm:^4.1.7":
-  version: 4.1.7
-  resolution: "@types/react-timeago@npm:4.1.7"
+"@types/react-timeago@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@types/react-timeago@npm:8.0.0"
   dependencies:
-    "@types/react": "*"
-  checksum: d69d47385a8f422c7ad16dadce1bcf2ea471324d36869d4b0d412f26e10311688fd5a0bad3e3963b427c2ba5c60f42671f5fb6582eb73dba25867b6246b9ca2c
+    react-timeago: "*"
+  checksum: d5978c9b0161fb36d151a725fd295225126ba93114397107f4b0747b94e2931af3761843f9ae1a51f0005e5c8f4a79c9a92e2af37765bb2c67be9789fa32ac6a
   languageName: node
   linkType: hard
 
@@ -9907,7 +9907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-timeago@npm:^8.3.0":
+"react-timeago@npm:*, react-timeago@npm:^8.3.0":
   version: 8.3.0
   resolution: "react-timeago@npm:8.3.0"
   peerDependencies:
