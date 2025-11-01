@@ -2794,13 +2794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^11.1.6":
-  version: 11.1.6
-  resolution: "@nestjs/common@npm:11.1.6"
+"@nestjs/common@npm:^11.1.8":
+  version: 11.1.8
+  resolution: "@nestjs/common@npm:11.1.8"
   dependencies:
     file-type: 21.0.0
     iterare: 1.2.1
-    load-esm: 1.0.2
+    load-esm: 1.0.3
     tslib: 2.8.1
     uid: 2.0.2
   peerDependencies:
@@ -2813,7 +2813,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: b615786df5ab33728757cb3ff5a932a5168d1a0ebd5c91fd13cf98db66d516cb10591a8d6a72e5cf7b7d8d2eeb04553522acbcb4fca10e441c7665cde949d004
+  checksum: 18d14323a900b1fa1a4310fab45b3134c51946ba7d4f73133a107f26e4eeb9d46e2b62f8d337b7b4d6927fc350faa5827b6fbfc894dafc850f9d39b8ac27755a
   languageName: node
   linkType: hard
 
@@ -3277,7 +3277,7 @@ __metadata:
     "@apollo/server": ^5.0.0
     "@nestjs/apollo": ^13.2.0
     "@nestjs/cli": ^11.0.10
-    "@nestjs/common": ^11.1.6
+    "@nestjs/common": ^11.1.8
     "@nestjs/config": ^4.0.2
     "@nestjs/core": ^11.1.6
     "@nestjs/graphql": ^13.2.0
@@ -8566,10 +8566,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"load-esm@npm:1.0.2":
-  version: 1.0.2
-  resolution: "load-esm@npm:1.0.2"
-  checksum: 3b26c1cb61e273194021a3c21b1d43c2a979527d9d02a3d764778233fd42d84396b4a3c6edd0abd72e55146f1bd9dde9b20ad74be641d77d93b9453c8406f1fa
+"load-esm@npm:1.0.3":
+  version: 1.0.3
+  resolution: "load-esm@npm:1.0.3"
+  checksum: 6949e8c253dddccca2a0ded1e9e0bbbc81924439d99e3a7d0f946ba6cdcd16de22c3cef28d997fd950befda0826ca65c3f913d9ba893d50e9cfc0bbd9a2a1e90
   languageName: node
   linkType: hard
 
