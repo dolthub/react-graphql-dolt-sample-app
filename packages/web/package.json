@@ -12,7 +12,7 @@
     "generate-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@apollo/client": "^3.13.5",
+    "@apollo/client": "^4.0.9",
     "@react-icons/all-files": "^4.1.0",
     "isomorphic-unfetch": "^4.0.2",
     "next": "^14.2.10",
