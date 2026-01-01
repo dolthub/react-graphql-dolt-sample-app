@@ -3502,7 +3502,7 @@ __metadata:
     isomorphic-unfetch: ^4.0.2
     next: ^14.2.10
     react: ^18.3.1
-    react-dom: ^18.3.1
+    react-dom: ^19.2.3
     react-loader: ^2.4.7
     react-timeago: ^8.3.0
     swr: ^2.3.6
@@ -10096,15 +10096,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react-dom@npm:18.3.1"
+"react-dom@npm:^19.2.3":
+  version: 19.2.3
+  resolution: "react-dom@npm:19.2.3"
   dependencies:
-    loose-envify: ^1.1.0
-    scheduler: ^0.23.2
+    scheduler: ^0.27.0
   peerDependencies:
-    react: ^18.3.1
-  checksum: 298954ecd8f78288dcaece05e88b570014d8f6dce5db6f66e6ee91448debeb59dcd31561dddb354eee47e6c1bb234669459060deb238ed0213497146e555a0b9
+    react: ^19.2.3
+  checksum: cb1f95df052802f5332cae78303b7fc6f58092d5c7f8d01f0401188b2e0157c1d273a041b900fcc4801f730c70ed17249bd5af170038692878ebe257f641488b
   languageName: node
   linkType: hard
 
@@ -10612,12 +10611,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.2":
-  version: 0.23.2
-  resolution: "scheduler@npm:0.23.2"
-  dependencies:
-    loose-envify: ^1.1.0
-  checksum: 3e82d1f419e240ef6219d794ff29c7ee415fbdc19e038f680a10c067108e06284f1847450a210b29bbaf97b9d8a97ced5f624c31c681248ac84c80d56ad5a2c4
+"scheduler@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "scheduler@npm:0.27.0"
+  checksum: 92644ead0a9443e20f9d24132fe93675b156209b9eeb35ea245f8a86768d0cc0fcca56f341eeef21d9b6dd8e72d6d5e260eb5a41d34b05cd605dd45a29f572ef
   languageName: node
   linkType: hard
 
