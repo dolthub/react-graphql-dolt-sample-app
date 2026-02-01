@@ -27,7 +27,7 @@
     "@nestjs/typeorm": "^11.0.0",
     "cors": "^2.8.5",
     "graphql": "^16.11.0",
-    "mysql2": "^3.14.4",
+    "mysql2": "^3.16.2",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.27"
   },
