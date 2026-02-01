@@ -3026,11 +3026,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^11.1.11":
-  version: 11.1.11
-  resolution: "@nestjs/common@npm:11.1.11"
+"@nestjs/common@npm:^11.1.12":
+  version: 11.1.12
+  resolution: "@nestjs/common@npm:11.1.12"
   dependencies:
-    file-type: 21.2.0
+    file-type: 21.3.0
     iterare: 1.2.1
     load-esm: 1.0.3
     tslib: 2.8.1
@@ -3045,7 +3045,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 2801c374943894e01422d925c4b678bbfd79ea1daa134a9717be075345d22dd0e4396681e1bb1c1215a1c6075cf502d3ac4dbbea8e4b076f5f9a91789630ccb2
+  checksum: 1fdfb10d148fa8277519b2ef7b9919ebc262acb09ba8bd71cf96162c71cb78eb9e628a4ad307af79f95bb79041c433b2ac25cc5b6db97a364bae31a7584dbb05
   languageName: node
   linkType: hard
 
@@ -3509,7 +3509,7 @@ __metadata:
     "@apollo/server": ^5.0.0
     "@nestjs/apollo": ^13.2.0
     "@nestjs/cli": ^11.0.10
-    "@nestjs/common": ^11.1.11
+    "@nestjs/common": ^11.1.12
     "@nestjs/config": ^4.0.2
     "@nestjs/core": ^11.1.11
     "@nestjs/graphql": ^13.2.0
@@ -6974,15 +6974,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-type@npm:21.2.0":
-  version: 21.2.0
-  resolution: "file-type@npm:21.2.0"
+"file-type@npm:21.3.0":
+  version: 21.3.0
+  resolution: "file-type@npm:21.3.0"
   dependencies:
     "@tokenizer/inflate": ^0.4.1
     strtok3: ^10.3.4
     token-types: ^6.1.1
     uint8array-extras: ^1.4.0
-  checksum: ed93d72007210b8df0af207ec80b0f6ec3b054fdfbdbf92feae0aa9f602f85d7b17f9e6e18bc9ec527343677d1dddc11ee47cecd7a5ad908bf2d7a264a8bc8bc
+  checksum: 52c480c327ff4800095988d1b3a0cf92eac5cae84c8ee6f15feb08b866b56404726e83ef74d4c51fffd749d4b7c64a4e2bb40bcfd8d9e44e6a0664cd694baf18
   languageName: node
   linkType: hard
 
